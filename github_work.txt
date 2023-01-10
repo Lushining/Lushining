@@ -1,0 +1,66 @@
+一、Git简介：
+1、安装->global参数#所有仓库都使用此配置，可针对某仓库指定不同name和Email。
+$ git config --global user.name "Lushining"
+$ git config --global user.email “1448239958@qq.com“
+2、仓库地址：
+HTTP：https://github.com/Lushining/Lushining.git
+SSH：git@github.com:Lushining/Lushining.git
+3、创建仓库(repository）
+*仓库可以简单理解为目录，Git管理其中所有的文件，跟踪其修改/删除，以便随时追踪历史或在将来“还原”。Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。Visual Studio Code代替记事本：文本具有各种形式的编码，建议使用标准的UTF-8编码。Windows使用自带的记事本编辑文本文件会遇到问题（如网页第一行可能会显示“?”/正确的程序一编译就报语法错误）。
+①创建一个空目录：
+$ mkdir learngit  #在工作目录下建立子目录；确保目录名(包括父目录）不含中文。
+$ cd learngit  #改变当前目录
+$ pwd  #显示当前目录。
+②把目录变成Git可以管理的仓库：$ git init
+#建成空仓库且多了个.git目录(默认隐藏)，用来跟踪管理仓库，不得手动修改。
+③把文件添加到仓库
+1.编写一个readme.txt文件  #放到learngit下(子目录)，其他地方Git找不到。
+Git is a version control system.
+Git is free software. 
+2.文件添加到暂存区index：$ git add readme.txt  #没有任何显示说明添加成功。
+3.暂存区所有内容提交到当前分支：$ git commit -m "wrote a readme file" 
+#可以多次add不同的文件(暂存区)，commit一次提交(当前分支)：
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+疑难解答
+Q：$ git add readme.txt -> fatal: not a git repository (or any of the parent directories)。
+A：Git命令必须在Git仓库目录内执行（git init除外），在仓库目录外执行没有意义。
+Q：$ git add readme.txt -> fatal: pathspec 'readme.txt' did not match any files。
+A：添加的某个文件必须在当前目录下存在，用ls或者dir命令查看当前目录的文件，看看文件是否存在，或者是否写错了文件名。
+4、修改文件内容
+①修改readme.txt文件内容：
+Git is a distributed version control system.
+Git is free software.
+②查看当前仓库状态：$ git status  #随时掌握工作区(当前仓库)状态
+Changes not staged for commit: #文件内容被修改，但还没有准备提交修改。
+③查看上次修改的具体内容：$ git diff readme.txt 
+④提交修改（同提交新文件）
+(1)添加修改文件：$ git add readme.txt  #同样没有任何输出。
+(2)再次查看当前仓库的状态：$ git status
+modified:   readme.txt  #将要被提交的修改包括readme.txt
+(3)$ git commit -m "add distributed"
+(4)再次查看仓库当前状态：$ git status
+nothing to commit, working tree clean #当前没有需要提交的修改且工作目录干净
+⑤再次修改文件内容并提交：Git is free software distributed under the GPL.
+5、版本回退：不断修改文件并提交，一旦文件被改乱或误删可从最近的commit恢复。
+①查看版本库的历史记录：$ git log  #显示从近到远提交的具体内容
+*加参数简化：$ git log --pretty=oneline  # commit id是十六进制，每个人均不同
+②版本回退：$ git reset --hard HEAD^
+# HEAD表示当前版本，上一个HEAD^，上上个HEAD^^，上100个HEAD~100
+③查看现行版本的内容：$ cat readme.txt（distributed版）
+④查看现行版本库的状态：$ git log  #最新版本(GPL)消失
+⑤回到未来版本：$ git reset --hard 5dc11  #找到未来版本(GPL)的commit id（5dc11…）版本号不必写全也不能只写前一两位，否则可能找到多个版本号，无法确定具体版本。
+⑥查看readme.txt的内容：$ cat readme.txt（GPL版）
+⑦找不到commit id：$ git reflog  #记录每一次命令，从输出可知相应的commit id
+小结：
+①使用命令git reset --hard <commit_id>可在历史之间穿梭。
+②穿梭前，用git log查看提交历史，确定要回退到的版本。
+③要重返未来，用git reflog查看命令历史，确定未来版本commit id。
+6、工作区与暂存区
+①工作区：learngit文件夹(子目录)。
+②隐藏目录.git(非工作区，是git的版本库)，储存了暂存区(stage/index)，Git自动创建的第一个分支master，指向master的一个指针HEAD。
+1.修改readme.txt并在工作区新增一个license文本文件
+2.status查看当前仓库状态：#readme.txt被修改，license从未被添加(Untracked)
+3.add将两个文件添加再查看状态（文件均添加到暂存区）
+  4.commit一次性将暂存区所有修改提交到当前分支
