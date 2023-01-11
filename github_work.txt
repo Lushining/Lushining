@@ -8,64 +8,107 @@ SSH：git@github.com:Lushining/Lushining.git
 $ git config --global user.name "Lushining"
 $ git config --global user.email "1448239958@qq.com"
 
-2、创建仓库(repository）:Git管理其中所有的文件，以便随时时光回溯。
-  Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。
-①创建一个空目录：
-$ mkdir learngit  #在工作目录下建立子目录；确保目录名(包括父目录）不含中文。
-$ cd learngit  #改变当前目录;cd "file"更换父目录
+2、创建仓库(repository):Git管理其中所有的文件，以便随时时光回溯。
+*Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。
+$ mkdir learngit  #在工作目录下建立子目录(空)；确保目录名(包括父目录）不含中文。
+$ cd learngit  #改变当前目录；$ cd "file"更换父目录
 $ pwd  #显示当前目录。
-②把目录变成Git可以管理的仓库：$ git init
-#建成空仓库且多了个.git目录(默认隐藏)，用来跟踪管理仓库，不得手动修改。
-③把文件添加到仓库
-1.编写一个readme.txt文件  #放到learngit下(子目录)，其他地方Git找不到。
-Git is a version control system.
-Git is free software. 
-2.文件添加到暂存区index：$ git add readme.txt  #没有任何显示说明添加成功。
-3.暂存区所有内容提交到当前分支：$ git commit -m "wrote a readme file" 
-#可以多次add不同的文件(暂存区)，commit一次提交(当前分支)：
+$ git init  #把目录变成Git可以管理的仓库  #建成空仓库且多了个.git目录(默认隐藏)，不得手动修改。
+
+3、提交文件到仓库：子目录(learngit)下编写文件，其他地方Git找不到。
+$ git add readme.txt                   #文件添加到暂存区
+$ git commit -m "wrote a readme file"  #暂存区所有内容提交到当前分支(master)
+#拓展
+①工作区(learngit)：父目录下新建的子目录
+ 版本库(.git)：储存了暂存区(stage)，自动创建的第一个分支master，指向master的指针HEAD。
+②可以多次add(->stage)，一次commit(->master)
 $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
+③Git管理修改而非文件：只有add+commit提交修改才能被版本库管理；#git stash可以暂存工作区内容(详见三-4）
 
-疑难解答
-Q：$ git add readme.txt -> fatal: not a git repository (or any of the parent directories)。
-A：Git命令必须在Git仓库目录内执行（git init除外），在仓库目录外执行没有意义。
-Q：$ git add readme.txt -> fatal: pathspec 'readme.txt' did not match any files。
-A：添加的某个文件必须在当前目录下存在，用ls或者dir命令查看当前目录的文件，看看文件是否存在，或者是否写错了文件名。
 
 4、修改文件内容
-①修改readme.txt文件内容：
-Git is a distributed version control system.
-Git is free software.
-②查看当前仓库状态：$ git status  #随时掌握工作区(当前仓库)状态
-Changes not staged for commit: #文件内容被修改，但还没有准备提交修改。
-③查看上次修改的具体内容：$ git diff readme.txt 
-④提交修改（同提交新文件）
-(1)添加修改文件：$ git add readme.txt  #同样没有任何输出。
-(2)再次查看当前仓库的状态：$ git status
-modified:   readme.txt  #将要被提交的修改包括readme.txt
-(3)$ git commit -m "add distributed"
-(4)再次查看仓库当前状态：$ git status
-nothing to commit, working tree clean #当前没有需要提交的修改且工作目录干净
-⑤再次修改文件内容并提交：Git is free software distributed under the GPL.
+$ git status               #查看当前仓库状态：modified被修改，untracked从未被添加
+$ git diff <file>          #查看上次修改的具体内容
+$ git diff -- HEAD <file>  #查看工作区与版本库的最新版本（第二次修改vs第一次）
+$ git add+commit           #提交修改
+
 5、版本回退：不断修改文件并提交，一旦文件被改乱或误删可从最近的commit恢复。
-①查看版本库的历史记录：$ git log  #显示从近到远提交的具体内容
-*加参数简化：$ git log --pretty=oneline  # commit id是十六进制，每个人均不同
-②版本回退：$ git reset --hard HEAD^
-# HEAD表示当前版本，上一个HEAD^，上上个HEAD^^，上100个HEAD~100
-③查看现行版本的内容：$ cat readme.txt（distributed版）
-④查看现行版本库的状态：$ git log  #最新版本(GPL)消失
-⑤回到未来版本：$ git reset --hard 5dc11  #找到未来版本(GPL)的commit id（5dc11…）版本号不必写全也不能只写前一两位，否则可能找到多个版本号，无法确定具体版本。
-⑥查看readme.txt的内容：$ cat readme.txt（GPL版）
-⑦找不到commit id：$ git reflog  #记录每一次命令，从输出可知相应的commit id
-小结：
-①使用命令git reset --hard <commit_id>可在历史之间穿梭。
-②穿梭前，用git log查看提交历史，确定要回退到的版本。
-③要重返未来，用git reflog查看命令历史，确定未来版本commit id。
-6、工作区与暂存区
-①工作区：learngit文件夹(子目录)。
-②隐藏目录.git(非工作区，是git的版本库)，储存了暂存区(stage/index)，Git自动创建的第一个分支master，指向master的一个指针HEAD。
-1.修改readme.txt并在工作区新增一个license文本文件
-2.status查看当前仓库状态：#readme.txt被修改，license从未被添加(Untracked)
-3.add将两个文件添加再查看状态（文件均添加到暂存区）
-4.commit一次性将暂存区所有修改提交到当前分支
+$ git log                   #查看版本库历史记录(确定HEAD)：HEAD当前版本，上版HEAD^，上上版HEAD^^，上100版HEAD~100
+$ git log --pretty=oneline  #参数简化：commit id是十六进制，每个人均不同
+$ git reflog                #查看历史命令得每条记录的commit id(不必写全也不能只写前一两位，不便确定具体版本)
+$ git reset --hard <HEAD/commit id>  #时光穿梭
+$ cat <name>                         #查看现行版本具体内容
+
+6、撤销修改
+$ git checkout -- <name>  #返回上一个add/commit：撤销工作区修改回到版本库最新状态/撤销暂存区修改回到暂存区状态；
+$ git reset HEAD <name>   #撤销暂存区修改返回工作区
+$ git reset --hard <HEAD/commit id>  #撤销版本库的修改回到历史
+
+7、删除文件：$rm <file>  #删除工作区文件，status查看可知被删除的文件
+$ git rm <file>+commit          #从版本库删除并提交
+$ git checkout --test.txt  #恢复误删(未commit则无法恢复)：撤销上一步操作(修改/删除)，用版本库代替工作区版本。
+
+疑难解答
+Q：add-> fatal: not a git repository (or any of the parent directories)。
+A：命令必须在Git仓库内执行（.git）,git init创建仓库。
+Q：add -> fatal: pathspec 'readme.txt' did not match any files。
+A：用ls或者dir命令查看当前目录的文件，确认文件名。
+Q:无法继续编写代码(编辑模式)
+A:q进入命令行模式
+
+二、远程仓库：Git是分布式版本控制系统，每个人都可以提交各自的推送到服务器仓库/从服务器仓库中拉取别人的提交。
+1、创建SSH key：
+①主用户目录存在.ssh目录，包括id_rsa(私钥)和id_rsa.pub(公钥)
+ 否则：$ ssh-keygen -t rsa -C "1448239958@qq.com"  #一路回车默认设置
+ *GitHub通过公钥确认只有本人才能推送，允许添加多个Key，就可在每台电脑(不同SSH key)上往GitHub推送了。
+②GitHub创建SSH key：登录Github->设置->SSH keys->任意title+复制id_rsa.pub内容->add key
+
+3、本地仓库推送远程(master->origin master)
+①手动创建远程仓库(父目录Lushining)：作为备份克隆新仓库；关联并推送本地仓库；让其他人通过该仓库来协作;。
+②添加远程库(子目录origin)：$ git remote add origin git@github.com:<账户名>/<父目录>  
+ #在本地仓库(learngit)下运行,必须指定名字（origin默认习惯名），Git自动创建第一个分支origin master。
+③首次推送：$ git push -u origin master  #推送成功后仓库内容相同；-u参数：推送并关联以简化命令。
+④后续推送：$ git push origin master     #把本地master分支的最新修改推送到远程master分支。
+
+4、删除远程仓库
+$ git remote -v  #查看远程库信息
+$ git remote rm <name>  #解除绑定关系：GitHub后台手动才能真正删除
+
+5、克隆仓库：创建远程仓库(gitskill)并添加自述文件
+ $ git clone git@github.com:Lushining/gitskills.git  #本地库(learngit)下添加了远程库(gitskill)
+ $ cd gitskill  #切换当前目录
+ $ ls           #查看当前工作目录的文件(README.md)
+
+疑难解答：
+ Q：无法打开.pub文件
+ A：选择文件并打开cmd窗口，type id_rsa.pub查看文件内容
+ Q：cmd内容复制
+ A：右键对话框->编辑->标记->选中->编辑复制
+ Q：第一次使用clone/push命令连接GitHub受到警告：
+ A：yes->
+ Q：Author identity unknown
+ A：重新初始设置(user.name/email)
+
+三、分支管理：
+①工作区add+commit->本地分支push->远程分支；非提交/推送则不保存、不可见
+②Git把每次提交串成时间线，分支指向提交，HEAD指向分支，就能确定当前分支及提交(版本)。  #新建版本库/远程库时Git默认创建主分支master/origin master
+
+1、创建与合并
+①创建新分支(dev)：新建指针dev指向master相同的最新提交，再切换当前分支(HEAD指向dev)，自此工作区的操作均针对dev(commit后，dev指针移动master指针不变)
+ $ git switch -c dev          #创建并切换分支（branch<name>+switch<name>）
+ $ git branch                 #查看所有分支：*表示当前分支
+ $ git add+commit+switch+cat  #dev更新修改，master不更新
+②合并分支(dev->master)：
+ $ git merge dev              #master指向dev的当前提交,文件更新
+③删除分支：
+ $ git branch -d <name>  
+
+3、解决冲突(合并的分支各自有不同的提交)
+$ git status              #获取冲突的文件
+$ cat <name>              #查看不同版本的文件内容
+$ git add+commit          #手动修改并提交
+$ git log--graph--pretty=oneline--abbrev-commit   #查看合并情况
+
+
