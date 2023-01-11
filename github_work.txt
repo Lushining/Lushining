@@ -1,15 +1,18 @@
-一、Git简介：
-1、安装->global参数#所有仓库都使用此配置，可针对某仓库指定不同name和Email。
-$ git config --global user.name "Lushining"
-$ git config --global user.email “1448239958@qq.com“
-2、仓库地址：
+GitHub
+#仓库地址：
 HTTP：https://github.com/Lushining/Lushining.git
 SSH：git@github.com:Lushining/Lushining.git
-3、创建仓库(repository）
-*仓库可以简单理解为目录，Git管理其中所有的文件，跟踪其修改/删除，以便随时追踪历史或在将来“还原”。Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。Visual Studio Code代替记事本：文本具有各种形式的编码，建议使用标准的UTF-8编码。Windows使用自带的记事本编辑文本文件会遇到问题（如网页第一行可能会显示“?”/正确的程序一编译就报语法错误）。
+
+一、Git简介：
+1、初始设置：global参数#所有仓库都使用此配置，可针对某仓库指定不同name和Email。
+$ git config --global user.name "Lushining"
+$ git config --global user.email "1448239958@qq.com"
+
+2、创建仓库(repository）:Git管理其中所有的文件，以便随时时光回溯。
+  Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。
 ①创建一个空目录：
 $ mkdir learngit  #在工作目录下建立子目录；确保目录名(包括父目录）不含中文。
-$ cd learngit  #改变当前目录
+$ cd learngit  #改变当前目录;cd "file"更换父目录
 $ pwd  #显示当前目录。
 ②把目录变成Git可以管理的仓库：$ git init
 #建成空仓库且多了个.git目录(默认隐藏)，用来跟踪管理仓库，不得手动修改。
@@ -23,11 +26,13 @@ Git is free software.
 $ git add file1.txt
 $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
+
 疑难解答
 Q：$ git add readme.txt -> fatal: not a git repository (or any of the parent directories)。
 A：Git命令必须在Git仓库目录内执行（git init除外），在仓库目录外执行没有意义。
 Q：$ git add readme.txt -> fatal: pathspec 'readme.txt' did not match any files。
 A：添加的某个文件必须在当前目录下存在，用ls或者dir命令查看当前目录的文件，看看文件是否存在，或者是否写错了文件名。
+
 4、修改文件内容
 ①修改readme.txt文件内容：
 Git is a distributed version control system.
@@ -63,4 +68,4 @@ nothing to commit, working tree clean #当前没有需要提交的修改且工�
 1.修改readme.txt并在工作区新增一个license文本文件
 2.status查看当前仓库状态：#readme.txt被修改，license从未被添加(Untracked)
 3.add将两个文件添加再查看状态（文件均添加到暂存区）
-  4.commit一次性将暂存区所有修改提交到当前分支
+4.commit一次性将暂存区所有修改提交到当前分支
