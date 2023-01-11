@@ -4,9 +4,14 @@ HTTP：https://github.com/Lushining/Lushining.git
 SSH：git@github.com:Lushining/Lushining.git
 
 一、Git简介：
-1、初始设置：global参数#所有仓库都使用此配置，可针对某仓库指定不同name和Email。
-$ git config --global user.name "Lushining"
-$ git config --global user.email "1448239958@qq.com"
+1、初始设置：--global #所有仓库都使用此配置，可针对某仓库指定不同name和Email。
+①登陆账户(必备)
+ $ git config --global user.name "Lushining"
+ $ git config --global user.email "1448239958@qq.com"
+②显示颜色让输出更醒目
+ $ git config --global color.ui true
+③忽略特殊文件
+ 在工作区根目录下创建.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。
 
 2、创建仓库(repository):Git管理其中所有的文件，以便随时时光回溯。
 *Git只跟踪文本文件(TXT/网页/程序代码）的改动(在第5行添加“Linux”）；无法跟踪二进制文件(图片/视频/word)的变化，仅将每次改动串联(只知图片大小变化，不知具体改了动)。
@@ -65,11 +70,11 @@ A:q进入命令行模式
  *GitHub通过公钥确认只有本人才能推送，允许添加多个Key，就可在每台电脑(不同SSH key)上往GitHub推送了。
 ②GitHub创建SSH key：登录Github->设置->SSH keys->任意title+复制id_rsa.pub内容->add key
 
-3、本地仓库推送远程(master->origin master)
+3、本地仓库推送远程(master->origin)
 ①手动创建远程仓库(父目录Lushining)：作为备份克隆新仓库；关联并推送本地仓库；让其他人通过该仓库来协作;。
 ②添加远程库(子目录origin)：$ git remote add origin git@github.com:<账户名>/<父目录>  
  #在本地仓库(learngit)下运行,必须指定名字（origin默认习惯名），Git自动创建第一个分支origin master。
-③首次推送：$ git push -u origin master  #推送成功后仓库内容相同；-u参数：推送并关联以简化命令。
+③首次推送：$ git push -u <origin> <master>  #推送成功后仓库内容相同；-u参数：推送并关联以简化命令。
 ④后续推送：$ git push origin master     #把本地master分支的最新修改推送到远程master分支。
 
 4、删除远程仓库
@@ -101,14 +106,73 @@ $ git remote rm <name>  #解除绑定关系：GitHub后台手动才能真正删�
  $ git branch                 #查看所有分支：*表示当前分支
  $ git add+commit+switch+cat  #dev更新修改，master不更新
 ②合并分支(dev->master)：
- $ git merge dev              #master指向dev的当前提交,文件更新
+ $ git merge dev                 #master指向dev的当前提交,文件更新
+ $ git merge --not-ff -m "" dev  #禁用ff模式，合并时新建一次commit，保留分支
 ③删除分支：
  $ git branch -d <name>  
 
-3、解决冲突(合并的分支各自有不同的提交)
+2、解决冲突(合并的分支各自有不同的提交)
 $ git status              #获取冲突的文件
 $ cat <name>              #查看不同版本的文件内容
 $ git add+commit          #手动修改并提交
 $ git log--graph--pretty=oneline--abbrev-commit   #查看合并情况
 
+3、Bug分支
+$ git stash                #(多次)储存当前工作现场（不包括未被git管理的文件-untracked）
+确定修复的分支位置(switch)->创建临时分支(switch -c)->修改并提交->删除临时分支(switch+branch -d)->回到原先工作分支
+$ git stash list           #获取储存的工作现场
+$ git stash apply stash{}  #恢复(指定)工作现场
+$ git stash drop           #删除储存的工作现场
+$ git stash pop            #恢复并删除储存现场
+$ git cherry-pick <commit id>  #复制特定的提交(reflog->id)到当前分支，Git自动为当前分支做一次提交，文件内容相同但为不同提交(id不同)
 
+4、feature分支：新建feature分支添加新功能，合并，删除。
+$ git branch -D <name>     #强行删除未合并的分支
+
+5、多人协作
+①查看远程库信息：
+$ git remote -v          #查看远程库(详细信息：push&fetch的地址)
+②推送分支(dev+master)：本地新建若不推送则对其他人不可见；
+$ git push <远程库origin> <分支>   #只推送需公开或协作的分支(master/dev)
+③抓取分支
+$ git clone <fetch地址>  #新建目录(=id2)克隆远程库->工作目录转为远程库(包含.git可直接被Git管理)；
+                          id2默认情况下只能看到master分支
+$ git switch -c <dev> <origin/dev>   #创建远程dev分支到本地
+$ git add+commit+push origin dev     #在dev上修改提交，并推送到远程
+*转到clone远程库下进行操作，否则：
+Q：clone后branch查看分支无显示
+A：分支指向commit的，没有提交则没有指针。需要进行一次提交
+Q：clone后add：warning: adding embedded git repository: Lushining
+A：删除clone仓库的版本库.git 
+③解决冲突：id2向origin/dev推送了提交，id1修改了相同文件并推送失败
+$ git pull         #抓取远程(origin/dev)的最新提交
+*若失败：$ git branch --set-upstream-to=origin/dev dev  #设置dev和origin/dev的新连接
+手动解决冲突->add->commit->push origin dev
+*自由参与官方项目
+①访问官方项目主页(http地址)，点“Fork”将官方仓库克隆到自己的Github账号下
+②从自己的账号下clone至本地工作区，才能提交/推送修改
+③若希望官方库能接受自身修改，可在GitHub上发起一个pull request（接收/拒绝）
+
+6、rebase
+同步远程分支0，本地做两次提交1/2：log显示本地比远程快两个提交。
+push失败(他人率先推送)-pull-手动解决冲突(status-cat-合并修改3=2)并提交(add-commit)：log显示超前三个提交1/2/3
+$ git rebase  #把本地未push的分叉的提交历史整理成直线，最终提交的内容不变，但本地的分叉提交被修改；
+               修改不再基于0，而是基于3，1->4,2->5,但最后的提交内容一致(3=5)。
+$ git push origin <master>
+
+四、标签管理：
+①先在版本库中打标签（tag）再发布版本，以唯一确定打标签时刻的版本
+②标签绑定commit且不能移动（类似分支，但commit id vs 版本号，更方便寻找特定版本）
+③若commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。
+1、创建标签：
+$ git switch master              #切换到需要打标签的分支
+$ git tag <tagname> <c-id>       #默认标签打在最新的commit,log查看c-id给历史提交打标签
+$ git tag -a <tagname> -m "说明" <c-id>   #创建带有说明的标签
+$ git tag                     #查看所有标签(按字母排序)
+$ git show <v1.0>             #查看具体标签信息：c-id/author/date...
+
+2、删除标签
+①删除本地标签：$ git tag -d <tagname>            
+②推送标签：    $ git push origin <tagname/--tags>     #特定/所有
+③删除远程标签：$ git tag -d <tagname>                 #从本地删除 
+              $ git push origin :refs/tags/<tagname> #从远处删除
