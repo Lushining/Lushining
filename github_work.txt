@@ -79,7 +79,9 @@ A:q进入命令行模式
 
 4、删除远程仓库
 $ git remote -v  #查看远程库信息
-$ git remote rm <name>  #解除绑定关系：GitHub后台手动才能真正删除
+$ git remote rm <name>  #解除绑定关系
+①手动删除远程库：github-库-setting-danger zone-del
+②删除远程库中的文件：本地删除-add-commit-push
 
 5、克隆仓库：创建远程仓库(gitskill)并添加自述文件
  $ git clone git@github.com:Lushining/gitskills.git  #本地库(learngit)下添加了远程库(gitskill)
