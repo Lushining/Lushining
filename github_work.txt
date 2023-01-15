@@ -63,9 +63,9 @@ A：用ls或者dir命令查看当前目录的文件，确认文件名。
 Q:无法继续编写代码(编辑模式)
 A:q进入命令行模式
 
-二、远程仓库：Git是分布式版本控制系统，每个人都可以提交各自的推送到服务器仓库/从服务器仓库中拉取别人的提交。
+二、远程仓库：每个人都可以提交各自的推送到服务器仓库/从服务器仓库中拉取别人的提交。
 1、创建SSH key：
-①主用户目录存在.ssh目录，包括id_rsa(私钥)和id_rsa.pub(公钥)
+①主用户目录存在.ssh目录cd，包括id_rsa(私钥)和id_rsa.pub(公钥)
  否则：$ ssh-keygen -t rsa -C "1448239958@qq.com"  #一路回车默认设置
  *GitHub通过公钥确认只有本人才能推送，允许添加多个Key，就可在每台电脑(不同SSH key)上往GitHub推送了。
 ②GitHub创建SSH key：登录Github->设置->SSH keys->任意title+复制id_rsa.pub内容->add key
@@ -76,6 +76,10 @@ A:q进入命令行模式
  #在本地仓库(learngit)下运行,必须指定名字（origin默认习惯名），Git自动创建第一个分支origin master。
 ③首次推送：$ git push -u <origin> <master>  #推送成功后仓库内容相同；-u参数：推送并关联以简化命令。
 ④后续推送：$ git push origin master     #把本地master分支的最新修改推送到远程master分支。
+Q：! [rejected]        master -> master (fetch first)
+   error: failed to push some refs to 'github.com:Lushining/Lushining.git'
+A:github中的readme文件不在本地代码目录；
+  git pull --rebase origin master #拉取文件合并
 
 4、删除远程仓库
 $ git remote -v  #查看远程库信息
@@ -92,7 +96,7 @@ $ git remote rm <name>  #解除绑定关系
  Q：无法打开.pub文件
  A：选择文件并打开cmd窗口，type id_rsa.pub查看文件内容
  Q：cmd内容复制
- A：右键对话框->编辑->标记->选中->编辑复制
+ A：右键对话框->选中->编辑-复制
  Q：第一次使用clone/push命令连接GitHub受到警告：
  A：yes->
  Q：Author identity unknown
