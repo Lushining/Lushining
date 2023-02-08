@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2ae9195-2f2a-46c7-86de-4e9a73625b2d" name="变更" comment="2.8">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javawithidea.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter01/Hw01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter01/Hw01t3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter02/Hw02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter03/Hw03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter04/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter04/Control.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter04/Cycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter04/Hw04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter05/Array.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter05/Array2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter05/Hw05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter05/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter05/Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/ClassAndObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/Constructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/Hw06.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/Overload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/Recursion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter06/This.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/Encap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/Extend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/ExtendTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/Idea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/Override.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/Package.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work06.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work07.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/homework/Work08.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/object/Equals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/object/ToString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/array/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/array/PolyArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/feed/Animals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/feed/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/feed/Master.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/feed/Poly01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/parameter/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/poly/parameter/PolyParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/smallchangesystem/Oop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/smallchangesystem/Produce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter07/smallchangesystem/Test.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2LSKDuHyZL8n7uRqHjukzEmaxFj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="f2ae9195-2f2a-46c7-86de-4e9a73625b2d" name="变更" comment="" />
+      <created>1675858932606</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675858932606</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2.8" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.8" />
+  </component>
+</project>
