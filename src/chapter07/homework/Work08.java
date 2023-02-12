@@ -1,34 +1,34 @@
 package chapter07.homework;
-//1.æé«˜å¤ç”¨æ€§ï¼šç›¸åŒå±æ€§ä¸æ–¹æ³•->çˆ¶ç±»ï¼Œç‰¹æœ‰->å­ç±»ï¼Œéƒ¨åˆ†ç›¸åŒ->é‡å†™
-//2.å¤šæ€æ•°ç»„
-//3.å¤šæ€å‚æ•°
+//1.Ìá¸ß¸´ÓÃĞÔ£ºÏàÍ¬ÊôĞÔÓë·½·¨->¸¸Àà£¬ÌØÓĞ->×ÓÀà£¬²¿·ÖÏàÍ¬->ÖØĞ´
+//2.¶àÌ¬Êı×é
+//3.¶àÌ¬²ÎÊı
 public class Work08 {
     public static void main(String[] args) {
-        //1.æ–¹æ³•é‡å†™
-        Teacher08 t = new Teacher08("å¼ é£", 'ç”·', 30, 5);
-        Student s = new Student("å°æ˜", 'ç”·', 15, "00023102");
+        //1.·½·¨ÖØĞ´
+        Teacher08 t = new Teacher08("ÕÅ·É", 'ÄĞ', 30, 5);
+        Student s = new Student("Ğ¡Ã÷", 'ÄĞ', 15, "00023102");
         t.say();
         s.say();
-        //2.å¤šæ€æ•°ç»„ï¼šçˆ¶ç±»ç¼–è¯‘ï¼Œä¿å­˜å­ç±»/çˆ¶ç±»
+        //2.¶àÌ¬Êı×é£º¸¸Àà±àÒë£¬±£´æ×ÓÀà/¸¸Àà
         Person08[] persons = new Person08[4];
-        persons[0] = new Student("Amy", 'å¥³', 15, "00023100");
-        persons[1] = new Student("Bob", 'ç”·', 14, "00023101");
-        persons[2] = new Teacher08("Cindy", 'å¥³', 35, 10);
-        persons[3] = new Teacher08("Dobby", 'å¥³', 45, 20);
-        System.out.println("======æ’åºç»“æœå¦‚ä¸‹======");
+        persons[0] = new Student("Amy", 'Å®', 15, "00023100");
+        persons[1] = new Student("Bob", 'ÄĞ', 14, "00023101");
+        persons[2] = new Teacher08("Cindy", 'Å®', 35, 10);
+        persons[3] = new Teacher08("Dobby", 'Å®', 45, 20);
+        System.out.println("======ÅÅĞò½á¹ûÈçÏÂ======");
         Work08 work08 = new Work08();
         work08.sort(persons);
         for(int i = 0;i < persons.length;i++){
-            System.out.println(persons[i]); //è‡ªåŠ¨è°ƒç”¨toStringæ–¹æ³•
+            System.out.println(persons[i]); //×Ô¶¯µ÷ÓÃtoString·½·¨
         }
-        System.out.println("======testæ–¹æ³•è¾“å‡ºå¦‚ä¸‹======");
-        //3.å¤šæ€å‚æ•°:å½¢å‚çˆ¶ç±»ï¼Œå®å‚å­ç±»ï¼›
+        System.out.println("======test·½·¨Êä³öÈçÏÂ======");
+        //3.¶àÌ¬²ÎÊı:ĞÎ²Î¸¸Àà£¬Êµ²Î×ÓÀà£»
         for(int i = 0;i < persons.length;i++){
             System.out.println(work08.test(persons[i]));
         }
 
     }
-        //å†’æ³¡æ’åºï¼šå¹´é¾„ä»å¤§åˆ°å°
+        //Ã°ÅİÅÅĞò£ºÄêÁä´Ó´óµ½Ğ¡
     public void sort(Person08[] persons){
         for(int i = 0;i < persons.length - 1;i++){
             for(int j = 0;j < persons.length - 1 - i;j++){
@@ -42,7 +42,7 @@ public class Work08 {
         }
     }
 
-    //å…¬æœ‰é‡å†™/ç‰¹æœ‰å‘ä¸‹è½¬å‹
+    //¹«ÓĞÖØĞ´/ÌØÓĞÏòÏÂ×ªĞÍ
     public String test(Person08 p){
         if(p instanceof Student){
             return ((Student) p).study();
@@ -73,12 +73,12 @@ class Person08{
         return sex;
     }
     public String play(){
-        return name+"çˆ±ç©";
+        return name+"°®Íæ";
     }
     public void say(){
-        System.out.println("å§“åï¼š"+name);
-        System.out.println("å¹´é¾„"+age);
-        System.out.println("æ€§åˆ«"+sex);
+        System.out.println("ĞÕÃû£º"+name);
+        System.out.println("ÄêÁä"+age);
+        System.out.println("ĞÔ±ğ"+sex);
     }
 
     @Override
@@ -98,18 +98,18 @@ class Student extends Person08{
         this.atu_id = atu_id;
     }
     public String study(){
-        return getName()+"æ‰¿è¯ºä¼šå¥½å¥½å­¦ä¹ ";
+        return getName()+"³ĞÅµ»áºÃºÃÑ§Ï°";
     }
     @Override
     public String play() {
-        return super.play()+"è¶³çƒ";
+        return super.play()+"×ãÇò";
     }
 
     @Override
     public void say() {
-        System.out.println("å­¦ç”Ÿä¿¡æ¯å¦‚ä¸‹ï¼š");
+        System.out.println("Ñ§ÉúĞÅÏ¢ÈçÏÂ£º");
         super.say();
-        System.out.println("å­¦å·ï¼š"+atu_id+"\n"+this.study()+"\n"+this.play());
+        System.out.println("Ñ§ºÅ£º"+atu_id+"\n"+this.study()+"\n"+this.play());
     }
 
     @Override
@@ -127,17 +127,17 @@ class Teacher08 extends Person08{
         this.work_age = work_age;
     }
     public String teach(){
-        return getName()+"æ‰¿è¯ºä¼šè®¤çœŸæ•™å­¦";
+        return getName()+"³ĞÅµ»áÈÏÕæ½ÌÑ§";
     }
 
     @Override
     public String play() {
-        return super.play()+"è±¡æ£‹";
+        return super.play()+"ÏóÆå";
     }
     public void say() {
-        System.out.println("è€å¸ˆä¿¡æ¯å¦‚ä¸‹ï¼š");
+        System.out.println("ÀÏÊ¦ĞÅÏ¢ÈçÏÂ£º");
         super.say();
-        System.out.println("å·¥é¾„ï¼š"+work_age+"\n"+this.teach()+"\n"+this.play());
+        System.out.println("¹¤Áä£º"+work_age+"\n"+this.teach()+"\n"+this.play());
     }
 
     @Override

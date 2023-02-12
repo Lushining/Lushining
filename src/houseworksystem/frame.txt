@@ -1,0 +1,74 @@
+一、项目分层
+1.house.java--模型层
+  ①一个House对象代表一个房屋信息
+2.service.java--业务层
+  ①针对后台操作创建相关属性与方法
+3.view.java--界面层
+  ①显示界面
+  ②接受输入完成选择
+  ③调用业务层编写对应方法完成具体操作
+4.app.java--用户层
+  ①程序入口(main)：创建View对象，调用主菜单
+5.util.java--工具层
+  ①处理用户的输入
+
+二、分步实现功能：功能->分层分析->代码实现
+1.创建对象：分析对象信息编写属性，生成构造器与toString方法；
+2.显示界面：
+  界面层：mainMenu()--显示菜单，完成选择
+  ①显示界面：do...while(loop)
+  ②完成选择：switch(scanner choose)
+3.具体功能：创建业务层对象，界面层调用业务层
+3.1 房屋列表：
+  界面层：遍历数组
+      ①接收数组：创建Service对象，调用业务方法 House[] houses=service.list();
+      ③遍历输出：自动调用toString()
+  业务层：创建数组
+    ①设置变量：定义数组保存对象；
+    ②创建构造器：指定数组长度；
+    ③list()：公共方法返回列表
+3.2 添加房屋：
+  界面层：add()
+    ①接受输入
+    ②新建对象：new House(参数);
+    ③新增并自动分配id：->业务方法
+  业务层：add(House newHouse)
+    ①是否可以继续添加(record已有房屋数)：record == houses.length；record++
+      *数组扩容*
+    ②自动赋予编号(idNum当前对象编号)：++idNum
+  模型层：
+    ①访问id：setId()
+3.3删除房屋
+  界面层
+    ①接受输入(delId)
+    ②过滤输入：-1退出方法(return)
+    ③确认提醒：->Utility方法(Y/N)
+    ④确认删除：Y->业务方法
+  业务层：boolean delete(int id)；
+    ①定位对象(index)
+      a.是否存在：delId == houses[i].getId()->模型层方法
+      b.过滤结果：index=-1(return false)
+    ②删除对象
+      a.覆盖更新：i=index，[i]=[i+1]
+      b.末位置空：[record-1]=null
+      c.更新房屋数目：record--
+      *[--record]=null
+  模型层：getId()
+3.4完善退出系统
+  界面层：增加确认提醒->Utility方法
+3.5查找房屋
+  界面层：
+    ①接受输入：searchId
+    ②输出对象：->业务方法
+  业务层：House search(int searchId)
+    ①是否存在：返回对象/null
+3.6修改信息
+  界面层：
+    ①选择对象(upChoice)：-1退出
+    ②定位对象：->业务方法
+    ③修改信息：->模型层方法、Utility(允许回车返回默认值)
+  业务层：
+    ①是否存在：->search
+  模型层：getter&setter *
+
+

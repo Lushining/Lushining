@@ -1,9 +1,9 @@
 package chapter07.homework;
-//重写Object类的equals方法
+//��дObject���equals����
 public class Work07 {
     public static void main(String[] args) {
-        Doctor doc1 = new Doctor("Amy",33,"住院医师",'女',6000);
-        Doctor doc2 = new Doctor("Amy",30,"住院医师",'女',6000);
+        Doctor doc1 = new Doctor("Amy",33,"סԺҽʦ",'Ů',6000);
+        Doctor doc2 = new Doctor("Amy",30,"סԺҽʦ",'Ů',6000);
         System.out.println(doc1.equals(doc2));
 
     }

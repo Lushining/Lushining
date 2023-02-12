@@ -1,38 +1,38 @@
 package chapter04;
-//test1å•åˆ†æ”¯ï¼šè¾“å…¥å¹´é¾„ï¼Œå¤§äº18åˆ™è¾“å‡º"ä½ æˆå¹´äº†"
+//test1µ¥·ÖÖ§£ºÊäÈëÄêÁä£¬´óÓÚ18ÔòÊä³ö"Äã³ÉÄêÁË"
 import java.util.Scanner;
 public class Branch {
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„å¹´é¾„ï¼š");
+        System.out.println("ÇëÊäÈëÄúµÄÄêÁä£º");
         int age = myScanner.nextInt();
         if(age>18){
-        System.out.println("æ­å–œä½ æˆå¹´äº†ï¼");
+        System.out.println("¹§Ï²Äã³ÉÄêÁË£¡");
         }
-        System.out.println("ç¨‹åºç»§ç»­...");
+        System.out.println("³ÌĞò¼ÌĞø...");
     } 
 }
-//test2åŒåˆ†æ”¯ï¼šå¦åˆ™è¾“å‡º"å¾ˆé—æ†¾ï¼Œä½ è¿˜æœªæˆå¹´..."
+//test2Ë«·ÖÖ§£º·ñÔòÊä³ö"ºÜÒÅº¶£¬Äã»¹Î´³ÉÄê..."
 class Test2 {
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„å¹´é¾„");
+        System.out.println("ÇëÊäÈëÄúµÄÄêÁä");
         int age = myScanner.nextInt();
         if(age>18){
-            System.out.println("æ­å–œä½ æˆå¹´äº†ï¼");
+            System.out.println("¹§Ï²Äã³ÉÄêÁË£¡");
         }
         else{
-            System.out.println("å¾ˆé—æ†¾ä½ è¿˜æœªæˆå¹´...");
+            System.out.println("ºÜÒÅº¶Äã»¹Î´³ÉÄê...");
         }
-        System.out.println("ç¨‹åºç»§ç»­...");
+        System.out.println("³ÌĞò¼ÌĞø...");
     } 
 }
-//test3å•åˆ†æ”¯ä¸åŒåˆ†æ”¯
+//test3µ¥·ÖÖ§ÓëË«·ÖÖ§
 class Test3 {
     public static void main(String[] args){
     /*
-    1.å£°æ˜ä¸¤ä¸ªdoubleå¹¶èµ‹å€¼
-      åˆ¤æ–­ç¬¬ä¸€ä¸ªæ•°å¤§äº10.0ï¼Œä¸”ç¬¬äºŒä¸ªå°äº20.0ï¼Œæ‰“å°ä¸¤æ•°å’Œ
+    1.ÉùÃ÷Á½¸ödouble²¢¸³Öµ
+      ÅĞ¶ÏµÚÒ»¸öÊı´óÓÚ10.0£¬ÇÒµÚ¶ş¸öĞ¡ÓÚ20.0£¬´òÓ¡Á½ÊıºÍ
     */
         double a = 15;
         double b = 16;
@@ -40,7 +40,7 @@ class Test3 {
          System.out.println("a+b ="+ (a + b));
         }
     /*
-    2.å®šä¹‰ä¸¤ä¸ªintï¼Œåˆ¤æ–­å’Œæ˜¯å¦èƒ½è¢«3å’Œ5æ•´é™¤
+    2.¶¨ÒåÁ½¸öint£¬ÅĞ¶ÏºÍÊÇ·ñÄÜ±»3ºÍ5Õû³ı
     */
         int c = 15;
         int d = 20;
@@ -52,171 +52,171 @@ class Test3 {
             System.out.println("????????????3??5????");
         }
     /*
-    3.åˆ¤æ–­å¹´ä»½æ˜¯å¦ä¸ºé—°å¹´
-      é—°å¹´ï¼šè¢«4æ•´é™¤ä¸è¢«100æ•´é™¤/è¢«400æ•´é™¤
+    3.ÅĞ¶ÏÄê·İÊÇ·ñÎªÈòÄê
+      ÈòÄê£º±»4Õû³ı²»±»100Õû³ı/±»400Õû³ı
     */
         int year =2023;
         if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ){
-            System.out.println("ä»Šå¹´æ˜¯é—°å¹´");
+            System.out.println("½ñÄêÊÇÈòÄê");
         }
         else{
-            System.out.println("ä»Šå¹´ä¸æ˜¯é—°å¹´");
+            System.out.println("½ñÄê²»ÊÇÈòÄê");
         }
     } 
 }
-/*test4:å¤šåˆ†æ”¯
-  é”®ç›˜è¾“å…¥é©¬ä¿å›½çš„ä¿¡ç”¨ç§¯åˆ†
-  1.100->ä¿¡ç”¨æå¥½
-  2.(80.99]->ä¿¡ç”¨ä¼˜ç§€
-  3.[60,80)->ä¿¡ç”¨ä¸€èˆ¬
-  4.å…¶ä»–->ä¿¡ç”¨ä¸åŠæ ¼
-  5.è¾“å…¥ä¸ä¸ºæ•´æ•°ï¼š"hello"->å¼‚å¸¸å¤„ç†æœºåˆ¶
+/*test4:¶à·ÖÖ§
+  ¼üÅÌÊäÈëÂí±£¹úµÄĞÅÓÃ»ı·Ö
+  1.100->ĞÅÓÃ¼«ºÃ
+  2.(80.99]->ĞÅÓÃÓÅĞã
+  3.[60,80)->ĞÅÓÃÒ»°ã
+  4.ÆäËû->ĞÅÓÃ²»¼°¸ñ
+  5.ÊäÈë²»ÎªÕûÊı£º"hello"->Òì³£´¦Àí»úÖÆ
 */
 class Test4{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„ä¿¡ç”¨æœºç§¯åˆ†(1-100)ï¼š");
+        System.out.println("ÇëÊäÈëÄúµÄĞÅÓÃ»ú»ı·Ö(1-100)£º");
         int score = myScanner.nextInt();
         if(score >=1 && score <= 100){
             if(score == 100){
-                System.out.println("ä¿¡ç”¨æå¥½");
+                System.out.println("ĞÅÓÃ¼«ºÃ");
             }
             else if(score >80 && score <= 99){
-                System.out.println("ä¿¡ç”¨ä¼˜ç§€");
+                System.out.println("ĞÅÓÃÓÅĞã");
             }
             else if(score >=60 && score <= 80){
-                System.out.println("ä¿¡ç”¨ä¸€èˆ¬");
+                System.out.println("ĞÅÓÃÒ»°ã");
             }
             else{
-                System.out.println("ä¿¡ç”¨ä¸åŠæ ¼");
+                System.out.println("ĞÅÓÃ²»¼°¸ñ");
             }
         }
         else{
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+            System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
         }
     }
 }
-//test5åµŒå¥—åˆ†æ”¯
-/*æ­Œæ‰‹æ¯”èµ›
-  1.åˆèµ›æˆç»©>8.0ï¼Œè¿›å…¥å†³èµ›ï¼Œå¦åˆ™æç¤ºæ·˜æ±°
+//test5Ç¶Ì×·ÖÖ§
+/*¸èÊÖ±ÈÈü
+  1.³õÈü³É¼¨>8.0£¬½øÈë¾öÈü£¬·ñÔòÌáÊ¾ÌÔÌ­
   2.???????????????????????
   3.??????????????????????
 */
 class Test5{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("é’æ˜¥è¾“å…¥æ‚¨çš„åˆèµ›æˆç»©");
+        System.out.println("Çà´ºÊäÈëÄúµÄ³õÈü³É¼¨");
         double score = myScanner.nextDouble();
         if(score > 8.0){
-            System.out.println("æ­å–œæ‚¨å·²æˆåŠŸè¿›å…¥å†³èµ›");
+            System.out.println("¹§Ï²ÄúÒÑ³É¹¦½øÈë¾öÈü");
             //String->char
-            System.out.println("è¯·è¾“å…¥æ‚¨çš„æ€§åˆ«");
+            System.out.println("ÇëÊäÈëÄúµÄĞÔ±ğ");
             char gender = myScanner.next().charAt(0);
-            if(gender == 'ç”·'){
-                System.out.println("ä½ çš„ç»„åˆ«æ˜¯ç”·å­ç»„");
+            if(gender == 'ÄĞ'){
+                System.out.println("ÄãµÄ×é±ğÊÇÄĞ×Ó×é");
             }
-            else if(gender == 'å¥³'){
-                System.out.println("æ‚¨çš„ç»„åˆ«ä¸ºå¥³å­ç»„");
+            else if(gender == 'Å®'){
+                System.out.println("ÄúµÄ×é±ğÎªÅ®×Ó×é");
             }
             else{
-                System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+                System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
             }
         }
         else{
-            System.out.println("å¾ˆé—æ†¾æ‚¨è¢«æ·˜æ±°äº†...");
+            System.out.println("ºÜÒÅº¶Äú±»ÌÔÌ­ÁË...");
         }
     }
 }
-//test6åµŒå¥—åˆ†æ”¯
-/*æ ¹æ®æ·¡æ—ºå­£çš„æœˆä»½å’Œå¹´é¾„æ‰“å°ç¥¨ä»·å“¦
-1.æ—ºå­£(4-10):
-  æˆäºº(18-60):60
-  å„¿ç«¥(<18):1/2
-  è€äºº(>60):1/3
-2.æ·¡å­£ï¼šæˆäºº40ï¼›å…¶ä»–20
+//test6Ç¶Ì×·ÖÖ§
+/*¸ù¾İµ­Íú¼¾µÄÔÂ·İºÍÄêÁä´òÓ¡Æ±¼ÛÅ¶
+1.Íú¼¾(4-10):
+  ³ÉÈË(18-60):60
+  ¶ùÍ¯(<18):1/2
+  ÀÏÈË(>60):1/3
+2.µ­¼¾£º³ÉÈË40£»ÆäËû20
 */   
 class Test6{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥å½“å‰å­£èŠ‚");
+        System.out.println("ÇëÊäÈëµ±Ç°¼¾½Ú");
         int month = myScanner.nextInt();
         if(month >= 4 && month <= 10){
-            System.out.println("å½“å‰ä¸ºæ—ºå­£");
-            System.out.println("è¯·è¾“å…¥æ‚¨çš„å¹´é¾„");
+            System.out.println("µ±Ç°ÎªÍú¼¾");
+            System.out.println("ÇëÊäÈëÄúµÄÄêÁä");
             int age = myScanner.nextInt();
             if(age < 18){
-                System.out.println("æ‚¨çš„ç¥¨ä»·ä¸º30å…ƒ");
+                System.out.println("ÄúµÄÆ±¼ÛÎª30Ôª");
             }
             else if(age >= 18 & age <= 60){
-                System.out.println("æ‚¨çš„ç¥¨ä»·ä¸º60å…ƒ");
+                System.out.println("ÄúµÄÆ±¼ÛÎª60Ôª");
             }
             else if(age > 60){
-                System.out.println("æ‚¨çš„ç¥¨ä»·ä¸º20å…ƒ");
+                System.out.println("ÄúµÄÆ±¼ÛÎª20Ôª");
             }
         }
         else if((month >= 1 && month < 4) || (month > 10 && month <=12)){
-            System.out.println("å½“å‰ä¸ºæ·¡å­£");
-            System.out.println("è¯·è¾“å…¥æ‚¨çš„å¹´é¾„");
+            System.out.println("µ±Ç°Îªµ­¼¾");
+            System.out.println("ÇëÊäÈëÄúµÄÄêÁä");
             int age = myScanner.nextInt();
             if(age >= 18 && age <= 60){
-                System.out.println("æ‚¨çš„ç¥¨ä»·ä¸º40å…ƒ");
+                System.out.println("ÄúµÄÆ±¼ÛÎª40Ôª");
             }
             else{
-                System.out.println("æ‚¨çš„ç¥¨ä»·ä¸º20å…ƒ");
+                System.out.println("ÄúµÄÆ±¼ÛÎª20Ôª");
             }
         }
         else{
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+            System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
         }
     }
 }
-//test7switchåˆ†æ”¯
+//test7switch·ÖÖ§
 /*
-1.?æ¥æ”¶ä¸€ä¸ªå­—ç¬¦ï¼ša,b,c,d,e,f,g
-2.a->æ˜ŸæœŸä¸€ï¼Œb->æ˜ŸæœŸäºŒ....
-3.æ ¹æ®ç”¨æˆ·è¾“å…¥æ˜¾ç¤ºç›¸åº”ä¿¡æ¯
+1.?½ÓÊÕÒ»¸ö×Ö·û£ºa,b,c,d,e,f,g
+2.a->ĞÇÆÚÒ»£¬b->ĞÇÆÚ¶ş....
+3.¸ù¾İÓÃ»§ÊäÈëÏÔÊ¾ÏàÓ¦ĞÅÏ¢
 */
 class Test7{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦(a-g)");
+        System.out.println("ÇëÊäÈëÒ»¸ö×Ö·û(a-g)");
         char receive = myScanner.next().charAt(0);
         switch(receive){
             case 'a':
-            System.out.println("æ˜ŸæœŸä¸€");
+            System.out.println("ĞÇÆÚÒ»");
             break;
             case 'b':
-            System.out.println("æ˜ŸæœŸäºŒ");
+            System.out.println("ĞÇÆÚ¶ş");
             break;
             case 'c':
-            System.out.println("æ˜ŸæœŸä¸‰");
+            System.out.println("ĞÇÆÚÈı");
             break;
             case 'd':
-            System.out.println("æ˜ŸæœŸå››");
+            System.out.println("ĞÇÆÚËÄ");
             break;
             case 'e':
-            System.out.println("æ˜ŸæœŸäº”");
+            System.out.println("ĞÇÆÚÎå");
             break;
             case 'f':
-            System.out.println("æ˜ŸæœŸå…­");
+            System.out.println("ĞÇÆÚÁù");
             break;
             case 'g':
-            System.out.println("æ˜ŸæœŸå¤©");
+            System.out.println("ĞÇÆÚÌì");
             break;
             default:
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+            System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
             break;
         }
-        System.out.println("ç¨‹åºç»“æŸï¼Œé€€å‡ºswith");
+        System.out.println("³ÌĞò½áÊø£¬ÍË³öswith");
 
     }
 }
 //test8:switch
-//å°å†™charè½¬æ¢å¤§å†™ï¼Œåªè½¬æ¢a-e,å…¶ä»–è¾“å‡ºother
+//Ğ¡Ğ´char×ª»»´óĞ´£¬Ö»×ª»»a-e,ÆäËûÊä³öother
 class Test8{
     public static void main(String[] args){
     Scanner myScanner = new Scanner(System.in);
-    System.out.println("è¯·è¾“å…¥ä¸€ä¸ªå°å†™å­—ç¬¦(a-e)");
+    System.out.println("ÇëÊäÈëÒ»¸öĞ¡Ğ´×Ö·û(a-e)");
     char small = myScanner.next().charAt(0);
     switch(small){
         case 'a':
@@ -237,17 +237,17 @@ class Test8{
         default:
             System.out.println("other");
     }
-    System.out.println("ç¨‹åºç»“æŸï¼Œé€€å‡ºswitch...");
+    System.out.println("³ÌĞò½áÊø£¬ÍË³öswitch...");
     }
 }
-//test9åµŒå¥—åˆ†æ”¯ï¼šåŒåˆ†æ”¯+switch
-//å­¦ç”Ÿæˆç»©>60è¾“å‡ºåˆæ ¼60ï¼Œä½äº60è¾“å‡ºä¸åˆæ ¼ï¼›ä¸”è¾“å…¥æˆç»©ä¸å¤§äº100
+//test9Ç¶Ì×·ÖÖ§£ºË«·ÖÖ§+switch
+//Ñ§Éú³É¼¨>60Êä³öºÏ¸ñ60£¬µÍÓÚ60Êä³ö²»ºÏ¸ñ£»ÇÒÊäÈë³É¼¨²»´óÓÚ100
 class Test9{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„æˆç»©(0-100)");
+        System.out.println("ÇëÊäÈëÄúµÄ³É¼¨(0-100)");
         double score = myScanner.nextDouble();
-        //caseçš„å¸¸é‡å€¼æ•°æ®ç±»å‹å¿…é¡»ä¸ºï¼šbyte/short/int/char/enum/String
+        //caseµÄ³£Á¿ÖµÊı¾İÀàĞÍ±ØĞëÎª£ºbyte/short/int/char/enum/String
         if(score >= 0 && score <=100){
             switch((int)score/60){
                 case 1:
@@ -259,44 +259,44 @@ class Test9{
             }
         }
         else{
-        System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+        System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
         }
     }
 }
-//test10åµŒå¥—åˆ†æ”¯ï¼šswitch+åŒåˆ†æ”¯
-//æ‰“å°æœˆä»½æ‰€å±çš„å­£èŠ‚ï¼šæ˜¥(3/4/5),å¤(6/7/8),ç§‹(9/10/11),å†¬(12/1/2)
+//test10Ç¶Ì×·ÖÖ§£ºswitch+Ë«·ÖÖ§
+//´òÓ¡ÔÂ·İËùÊôµÄ¼¾½Ú£º´º(3/4/5),ÏÄ(6/7/8),Çï(9/10/11),¶¬(12/1/2)
 class Test10{
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥å½“å‰å­£èŠ‚(0-12)ï¼š");
+        System.out.println("ÇëÊäÈëµ±Ç°¼¾½Ú(0-12)£º");
         int month = myScanner.nextInt();
         if(month >=1 && month <=12){
             switch(month){
-                //caseä¸åŒå¸¸é‡å€¼åŒè¾“å‡ºå¯åˆå¹¶
+                //case²»Í¬³£Á¿ÖµÍ¬Êä³ö¿ÉºÏ²¢
                 case 3:
                 case 4:
                 case 5:
-                    System.out.println("æ˜¥å­£");
+                    System.out.println("´º¼¾");
                     break;
                 case 6:
                 case 7:
                 case 8:
-                    System.out.println("å¤å­£");
+                    System.out.println("ÏÄ¼¾");
                     break;
                 case 9:
                 case 10:
                 case 11:
-                    System.out.println("ç§‹å­£");
+                    System.out.println("Çï¼¾");
                     break;
                 case 12:
                 case 1:
                 case 2:
-                    System.out.println("å†¬å­£");
+                    System.out.println("¶¬¼¾");
                     break;
             }
         }
         else{
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯è¯·é‡æ–°ç¡®è®¤...");
+            System.out.println("ÄúµÄÊäÈëÓĞÎóÇëÖØĞÂÈ·ÈÏ...");
         }
     }
 }

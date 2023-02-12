@@ -2,10 +2,10 @@ package chapter07.object;
 
 public class Equals {
     public static void main(String[] args) {
-        Person p1 = new Person("Amy",18,'å¥³');
-        Person p2 = new Person("Amy",18,'å¥³');
-    //1.ç›´æ¥ä½¿ç”¨:é¡ºåºæŸ¥æ‰¾ä½¿ç”¨Objectç±»çš„equalsæ–¹æ³•,æ¯”è¾ƒå¼•ç”¨ç±»å‹åœ°å€
-    //2.é‡å†™æ–¹æ³•:Personç±»çš„equalsæ–¹æ³•,åˆ¤æ–­å¯¹è±¡å†…å®¹æ˜¯å¦ç›¸ç­‰;
+        Person p1 = new Person("Amy",18,'Å®');
+        Person p2 = new Person("Amy",18,'Å®');
+    //1.Ö±½ÓÊ¹ÓÃ:Ë³Ğò²éÕÒÊ¹ÓÃObjectÀàµÄequals·½·¨,±È½ÏÒıÓÃÀàĞÍµØÖ·
+    //2.ÖØĞ´·½·¨:PersonÀàµÄequals·½·¨,ÅĞ¶Ï¶ÔÏóÄÚÈİÊÇ·ñÏàµÈ;
         System.out.println(p1.equals(p2));
     }
 }
@@ -18,15 +18,15 @@ class Person{
         this.age = age;
         this.gender = gender;
     }
-    //å¤šæ€å‚æ•°:å‘ä¸Šè½¬å‹
+    //¶àÌ¬²ÎÊı:ÏòÉÏ×ªĞÍ
     public boolean equals(Object obj){
-        //1.æ¯”è¾ƒåŒä¸€ä¸ªå¯¹è±¡åˆ™è¿”å›true
+        //1.±È½ÏÍ¬Ò»¸ö¶ÔÏóÔò·µ»Øtrue
         if(this == obj){
             return true;
         }
-        //2.æ¯”è¾ƒä¸¤ä¸ªPersonå¯¹è±¡
+        //2.±È½ÏÁ½¸öPerson¶ÔÏó
         if(obj instanceof Person){
-        //3.å‘ä¸‹è½¬å‹,è®¿é—®Personå±æ€§(ç¼–è¯‘ç±»å‹å†³å®š)
+        //3.ÏòÏÂ×ªĞÍ,·ÃÎÊPersonÊôĞÔ(±àÒëÀàĞÍ¾ö¶¨)
             Person p = (Person) obj;
             return this.name.equals(p.name) && this.age == p.age && this.gender == p.gender;
         }

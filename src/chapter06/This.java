@@ -1,16 +1,16 @@
 package chapter06;
 public class This {
-//thisä½¿ç”¨ç»†èŠ‚:åªèƒ½åœ¨ç±»çš„æ–¹æ³•ä¸­ä½¿ç”¨
-//1.è®¿é—®å˜é‡ï¼šâ‘ åŒºåˆ†å±æ€§ä¸å±€éƒ¨å˜é‡ï¼šthis.<> == å±æ€§;â‘¡é‡åå°±è¿‘è®¿é—®
-//2.æˆå‘˜æ–¹æ³•ï¼šthis.<>();
-//3.æ„é€ å™¨ï¼šthis()  #å¿…é¡»ä¸ºç¬¬ä¸€æ¡è¯­å¥ï¼Œä¸”åªä»…åœ¨æ„é€ å™¨ä¸­ä½¿ç”¨
+//thisÊ¹ÓÃÏ¸½Ú:Ö»ÄÜÔÚÀàµÄ·½·¨ÖĞÊ¹ÓÃ
+//1.·ÃÎÊ±äÁ¿£º¢ÙÇø·ÖÊôĞÔÓë¾Ö²¿±äÁ¿£ºthis.<> == ÊôĞÔ;¢ÚÖØÃû¾Í½ü·ÃÎÊ
+//2.³ÉÔ±·½·¨£ºthis.<>();
+//3.¹¹ÔìÆ÷£ºthis()  #±ØĞëÎªµÚÒ»ÌõÓï¾ä£¬ÇÒÖ»½öÔÚ¹¹ÔìÆ÷ÖĞÊ¹ÓÃ
     public static void main(String[] args) {
         T t = new T(18,"a");
-        System.out.println("å°±è¿‘è®¿é—®å¦‚ä¸‹ï¼š" + t.name + " " + t.age);//è®¿é—®å±æ€§ï¼Œæœªè¢«æ„é€ å™¨ä¿®æ”¹
+        System.out.println("¾Í½ü·ÃÎÊÈçÏÂ£º" + t.name + " " + t.age);//·ÃÎÊÊôĞÔ£¬Î´±»¹¹ÔìÆ÷ĞŞ¸Ä
 
-        T t1 = new T();//è®¿é—®æ— å‚æ„é€ å™¨
+        T t1 = new T();//·ÃÎÊÎŞ²Î¹¹ÔìÆ÷
         t1.info1();
-        System.out.println("info1æœ€ç»ˆä¿¡æ¯å¦‚ä¸‹ï¼š"  + t1.name);//å±æ€§è¢«ä¿®æ”¹
+        System.out.println("info1×îÖÕĞÅÏ¢ÈçÏÂ£º"  + t1.name);//ÊôĞÔ±»ĞŞ¸Ä
 
         T t2 = new T();
         t2.f2();
@@ -20,44 +20,44 @@ class T{
     String name = "person";
     int age = 100;
     public T(int age,String name){
-        name = name;  //å±€éƒ¨å˜é‡=å±€éƒ¨å˜é‡ï¼Œå±æ€§ä¸å˜
+        name = name;  //¾Ö²¿±äÁ¿=¾Ö²¿±äÁ¿£¬ÊôĞÔ²»±ä
         age = age;
-        System.out.println("è‡ªå®šä¹‰infoå¦‚ä¸‹ï¼š"+name + " " + age);//å°±è¿‘è®¿é—®è¾“å…¥çš„å®å‚
-        System.out.println("å±æ€§infoå¦‚ä¸‹ï¼š" +this.name+" "+this.age);//è®¿é—®å±æ€§
+        System.out.println("×Ô¶¨ÒåinfoÈçÏÂ£º"+name + " " + age);//¾Í½ü·ÃÎÊÊäÈëµÄÊµ²Î
+        System.out.println("ÊôĞÔinfoÈçÏÂ£º" +this.name+" "+this.age);//·ÃÎÊÊôĞÔ
     }
     public void info1(){
-        //å±æ€§ä¸å±€éƒ¨å˜é‡å¯é‡åï¼Œå°±è¿‘è®¿é—®åŸåˆ™
-        name = "dog";  // ä¿®æ”¹å±æ€§
-        System.out.println("info1æ›´æ–°ä¿¡æ¯å¦‚ä¸‹ï¼š"+name);
+        //ÊôĞÔÓë¾Ö²¿±äÁ¿¿ÉÖØÃû£¬¾Í½ü·ÃÎÊÔ­Ôò
+        name = "dog";  // ĞŞ¸ÄÊôĞÔ
+        System.out.println("info1¸üĞÂĞÅÏ¢ÈçÏÂ£º"+name);
         name = "cat";
-        System.out.println("info2æ›´æ–°ä¿¡æ¯å¦‚ä¸‹ï¼š"+name);
+        System.out.println("info2¸üĞÂĞÅÏ¢ÈçÏÂ£º"+name);
     }
     public void f1(){
-        System.out.println("f1()æ–¹æ³•");
+        System.out.println("f1()·½·¨");
     }
     public void f2(){
-        System.out.println("f2()æ–¹æ³•");
-        //2.è°ƒç”¨æˆå‘˜æ–¹æ³•ï¼šè°ƒç”¨æœ¬ç±»çš„f1()
+        System.out.println("f2()·½·¨");
+        //2.µ÷ÓÃ³ÉÔ±·½·¨£ºµ÷ÓÃ±¾ÀàµÄf1()
         f1();
         this.f1();
     }
     public T(){
         this("amy",6);
-        System.out.println("æ— å‚æ„é€ å™¨");
+        System.out.println("ÎŞ²Î¹¹ÔìÆ÷");
     }
     public T(String name,int age){
-        System.out.println("ä¼ å‚æ„é€ å™¨");
+        System.out.println("´«²Î¹¹ÔìÆ÷");
     }
 }
 
-//thisç»ƒä¹ é¢˜ï¼š
-//å®šä¹‰Infoç±»ï¼ŒåŒ…å«gender,heightå±æ€§
-//æä¾›compareæ–¹æ³•ã€‚åˆ¤æ–­æ˜¯å¦ç›¸ç­‰;æ€§åˆ«èº«é«˜ç›¸åŒåˆ™è¿”å›true
+//thisÁ·Ï°Ìâ£º
+//¶¨ÒåInfoÀà£¬°üº¬gender,heightÊôĞÔ
+//Ìá¹©compare·½·¨¡£ÅĞ¶ÏÊÇ·ñÏàµÈ;ĞÔ±ğÉí¸ßÏàÍ¬Ôò·µ»Øtrue
 class ThisTest{
     public static void main(String[] args){
-        Info info1 = new Info('å¥³',175);
-        boolean res = info1.compare('å¥³',173);
-        System.out.println("ä¸¤äººä¿¡æ¯æ˜¯å¦ä¸€è‡´ï¼Ÿ"+res);
+        Info info1 = new Info('Å®',175);
+        boolean res = info1.compare('Å®',173);
+        System.out.println("Á½ÈËĞÅÏ¢ÊÇ·ñÒ»ÖÂ£¿"+res);
     }
 }
 class Info{
@@ -77,7 +77,7 @@ class Info{
 }
 /*public boolean compare(Info i){
     return this.gender.equals(i.gender) && this.height == i.height
-  //new i1/i2ï¼›i1.compare(i2);
+  //new i1/i2£»i1.compare(i2);
 */
 
 

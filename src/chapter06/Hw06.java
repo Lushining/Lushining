@@ -1,16 +1,16 @@
 package chapter06;
-//test1:æ•°ç»„
-/*1.1éå†æ•°ç»„ï¼š
-  å®šä¹‰ç±»A01æ–¹æ³•maxï¼Œå®ç°è¾“å‡ºdoubleæ•°ç»„æœ€å¤§å€¼;
-  ä¼˜åŒ–1ï¼šç¡®ä¿æ•°ç»„æœ‰é•¿åº¦  #æŒ‡å®šè¾“å‡ºä¸ºåŒ…è£…ç±»Double(double/null)
-  ä¼˜åŒ–2ï¼šç¡®ä¿æ•°ç»„ä¸ä¸ºç©º  #æ•°ç»„(å¼•ç”¨æ•°æ®ç±»å‹)å¯èµ‹å€¼null
+//test1:Êı×é
+/*1.1±éÀúÊı×é£º
+  ¶¨ÒåÀàA01·½·¨max£¬ÊµÏÖÊä³ödoubleÊı×é×î´óÖµ;
+  ÓÅ»¯1£ºÈ·±£Êı×éÓĞ³¤¶È  #Ö¸¶¨Êä³öÎª°ü×°ÀàDouble(double/null)
+  ÓÅ»¯2£ºÈ·±£Êı×é²»Îª¿Õ  #Êı×é(ÒıÓÃÊı¾İÀàĞÍ)¿É¸³Öµnull
 */
-//1.2æ•°ç»„æŸ¥æ‰¾ï¼š
-/*å®šä¹‰ç±»A02æ–¹æ³•findï¼ŒæŸ¥æ‰¾å­—ç¬¦ä¸²æ•°ç»„å¹¶è¿”å›ç´¢å¼•ï¼›è‹¥æ‰¾ä¸åˆ°è¿”å›-1
-  ç»†èŠ‚1ï¼šå®šä¹‰indexå˜é‡åˆ¤æ–­æŸ¥æ‰¾æ˜¯å¦æˆåŠŸ
-  ç»†èŠ‚2ï¼šå­—ç¬¦ä¸²çš„ç›¸ç­‰åˆ¤æ–­ï¼šString1.equals(String2)
-  ä¼˜åŒ–1ï¼šfind(String findStr,String[] arr)  //å½¢å‚åˆ—è¡¨æ›¿ä»£é”®å…¥
-  ä¼˜åŒ–2ï¼šå¥å£®æ€§(æ•°ç»„!=null/{})
+//1.2Êı×é²éÕÒ£º
+/*¶¨ÒåÀàA02·½·¨find£¬²éÕÒ×Ö·û´®Êı×é²¢·µ»ØË÷Òı£»ÈôÕÒ²»µ½·µ»Ø-1
+  Ï¸½Ú1£º¶¨Òåindex±äÁ¿ÅĞ¶Ï²éÕÒÊÇ·ñ³É¹¦
+  Ï¸½Ú2£º×Ö·û´®µÄÏàµÈÅĞ¶Ï£ºString1.equals(String2)
+  ÓÅ»¯1£ºfind(String findStr,String[] arr)  //ĞÎ²ÎÁĞ±íÌæ´ú¼üÈë
+  ÓÅ»¯2£º½¡×³ĞÔ(Êı×é!=null/{})
  */
 import java.util.Scanner;
 import java.util.Random;
@@ -22,7 +22,7 @@ public class Hw06 {
         if(res1 != null) {
             System.out.println("max=" + res1);
         }else{
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°ç¡®è®¤...");
+            System.out.println("ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÈ·ÈÏ...");
         }
 
         A02 a02 = new A02();
@@ -31,12 +31,12 @@ public class Hw06 {
         if(res2 != -1) {
             System.out.println("index=" + res2);
         }else{
-            System.out.println("æ‰¾ä¸åˆ°è¯¥å­—ç¬¦ä¸²");
+            System.out.println("ÕÒ²»µ½¸Ã×Ö·û´®");
         }
     }
 }
 class A01{
-    //åŒ…è£…ç±»Double
+    //°ü×°ÀàDouble
     public Double max(double[] arr){
         if(arr != null && arr.length > 0){
             double max = arr[0];
@@ -45,7 +45,7 @@ class A01{
                     max = arr[i];
                 }
             }
-            return max;//doubleå€¼
+            return max;//doubleÖµ
         }
         else{
             return null;
@@ -55,7 +55,7 @@ class A01{
 class A02{
     public int find(String[] arr){
         int index = -1;
-        System.out.println("è¯·è¾“å…¥æƒ³è¦æŸ¥è¯¢çš„å­—ç¬¦ä¸²ï¼š");
+        System.out.println("ÇëÊäÈëÏëÒª²éÑ¯µÄ×Ö·û´®£º");
         Scanner myScanner = new Scanner(System.in);
         String in = myScanner.next();
         for(int i = 0;i <arr.length;i++){
@@ -67,13 +67,13 @@ class A02{
     }
 }
 
-//test2:æ„é€ å™¨åˆå§‹åŒ–å±æ€§ã€æˆå‘˜æ–¹æ³•ã€thisè®¿é—®å±æ€§
-/*æ›´æ”¹æŸæœ¬ä¹¦çš„ä»·æ ¼:ä»·æ ¼>150/100->150/100ï¼Œå¦åˆ™ä¸å˜
-  ç»†èŠ‚ï¼šæ— å‚æ–¹æ³•æ³¨ç›´æ¥è®¿é—®å±æ€§ï¼ˆname == this.nameï¼‰
+//test2:¹¹ÔìÆ÷³õÊ¼»¯ÊôĞÔ¡¢³ÉÔ±·½·¨¡¢this·ÃÎÊÊôĞÔ
+/*¸ü¸ÄÄ³±¾ÊéµÄ¼Û¸ñ:¼Û¸ñ>150/100->150/100£¬·ñÔò²»±ä
+  Ï¸½Ú£ºÎŞ²Î·½·¨×¢Ö±½Ó·ÃÎÊÊôĞÔ£¨name == this.name£©
  */
 class Hw06Test2{
     public static void main(String[] args){
-        Book book1 = new Book("å“ˆåˆ©æ³¢ç‰¹",800);
+        Book book1 = new Book("¹şÀû²¨ÌØ",800);
         book1.info();
         book1.updatePrice();
         book1.info();
@@ -98,18 +98,18 @@ class Book{
     }
 }
 
-//test3:æ•°ç»„å¤åˆ¶ï¼Œè¾“å…¥æ—§æ•°ç»„è¿”å›æ–°æ•°ç»„(å¼€è¾Ÿæ–°ç©ºé—´->éå†èµ‹å€¼)
+//test3:Êı×é¸´ÖÆ£¬ÊäÈë¾ÉÊı×é·µ»ØĞÂÊı×é(¿ª±ÙĞÂ¿Õ¼ä->±éÀú¸³Öµ)
 class Hw06Test3{
     public static void main(String[] args){
         int[] oldArr = {1,2,3,4,5};
         A03 a03 = new A03();
         int[] newArr = a03.copyArr(oldArr);
-        System.out.println("æ—§æ•°ç»„å¦‚ä¸‹");
+        System.out.println("¾ÉÊı×éÈçÏÂ");
         for(int i = 0;i < newArr.length;i++){
             System.out.print(oldArr[i]+" ");
         }
         System.out.println();
-        System.out.println("æ–°æ•°ç»„å¦‚ä¸‹");
+        System.out.println("ĞÂÊı×éÈçÏÂ");
         for(int i = 0;i < newArr.length;i++){
             System.out.print(newArr[i]+" ");
         }
@@ -125,7 +125,7 @@ class A03{
     }
 }
 
-//test4:è®¡ç®—åœ†çš„å‘¨é•¿ä¸é¢ç§¯
+//test4:¼ÆËãÔ²µÄÖÜ³¤ÓëÃæ»ı
 class Hw06Test4{
     public static void main(String[] args){
         Circle circle = new Circle(3);
@@ -145,8 +145,8 @@ class Circle{
         return Math.PI * radius * radius;
     }
 }
-//test5:å››ä¸ªæ–¹æ³•æ±‚å’Œå·®ä¹˜å•†(é™¤æ•°ä¸ºé›¶åˆ™æŠ¥é”™)
-//ç»†èŠ‚ï¼šåŒ…è£…ç±»çš„è¿ç”¨
+//test5:ËÄ¸ö·½·¨ÇóºÍ²î³ËÉÌ(³ıÊıÎªÁãÔò±¨´í)
+//Ï¸½Ú£º°ü×°ÀàµÄÔËÓÃ
 class Hw06Test5{
     public static void main(String[] args) {
         Cale cale = new Cale(1,0);
@@ -176,7 +176,7 @@ class Cale{
     }
     public Double division(){
         if(num2 == 0) {
-            System.out.println("è­¦å‘Šï¼šé™¤æ•°ä¸èƒ½ä¸ºé›¶");
+            System.out.println("¾¯¸æ£º³ıÊı²»ÄÜÎªÁã");
             return null;
         }
         else{
@@ -186,7 +186,7 @@ class Cale{
 }
 class Hw06Test6{
     public static void main(String[] args) {
-        Dog dog = new Dog("å°é»„","é»„è‰²",3);
+        Dog dog = new Dog("Ğ¡»Æ","»ÆÉ«",3);
         dog.show();
     }
 }
@@ -206,11 +206,11 @@ class Dog{
     }
 }
 
-//åŒ¿åå¯¹è±¡ï¼šnew Test().count1  #å †åˆ›å»ºç©ºé—´ä¸è¿”å›æ ˆåœ°å€ï¼Œè¯­å¥ç»“æŸåˆ™é”€æ¯
+//ÄäÃû¶ÔÏó£ºnew Test().count1  #¶Ñ´´½¨¿Õ¼ä²»·µ»ØÕ»µØÖ·£¬Óï¾ä½áÊøÔòÏú»Ù
 //test7:
 class Hw06Test7{
     public static void main(String[] args){
-        Music music = new Music("å‘å¤©å†å€Ÿäº”ç™¾å¹´",180);
+        Music music = new Music("ÏòÌìÔÙ½èÎå°ÙÄê",180);
         music.play();
         music.getInfo();
     }
@@ -223,22 +223,22 @@ class Music{
         this.times = times;
     }
     public void play(){
-        System.out.println("ä¸ºæ‚¨æ’­æ”¾æ­Œæ›²ï¼š"+name);
+        System.out.println("ÎªÄú²¥·Å¸èÇú£º"+name);
     }
     public void getInfo(){
-        System.out.println("æ­Œæ›²"+name+"æ—¶é•¿"+times);
-    } //return "æ­Œæ›²"+name+"æ—¶é•¿"+timesï¼›ï¼ˆStringï¼‰
+        System.out.println("¸èÇú"+name+"Ê±³¤"+times);
+    } //return "¸èÇú"+name+"Ê±³¤"+times£»£¨String£©
 }
 
-//Test8ï¼š
-//1.æ„é€ å™¨é‡è½½ï¼šåŒåä¸åŒå½¢å‚åˆ—è¡¨(å‚æ•°ä¸ªæ•°/é¡ºåº/ç±»å‹)
-//2.æ„é€ å™¨å¤ç”¨ï¼šthisè°ƒç”¨æ„é€ å™¨(åœ¨æ„é€ å™¨ä¸­ä½¿ç”¨ä¸”å¿…é¡»ä¸ºç¬¬ä¸€æ¡è¯­å¥)
+//Test8£º
+//1.¹¹ÔìÆ÷ÖØÔØ£ºÍ¬Ãû²»Í¬ĞÎ²ÎÁĞ±í(²ÎÊı¸öÊı/Ë³Ğò/ÀàĞÍ)
+//2.¹¹ÔìÆ÷¸´ÓÃ£ºthisµ÷ÓÃ¹¹ÔìÆ÷(ÔÚ¹¹ÔìÆ÷ÖĞÊ¹ÓÃÇÒ±ØĞëÎªµÚÒ»ÌõÓï¾ä)
 class Hw06Test8{
     public static void main(String[] args){
-        Employee p1 = new Employee("Amy",'å¥³',35,
-                "æ€»ç»ç†",25000);
-        Employee p2 = new Employee("lily",'ç”·',58);
-        Employee p3 = new Employee("ä¿æ´",3500);
+        Employee p1 = new Employee("Amy",'Å®',35,
+                "×Ü¾­Àí",25000);
+        Employee p2 = new Employee("lily",'ÄĞ',58);
+        Employee p3 = new Employee("±£½à",3500);
     }
 }
 class Employee{
@@ -264,9 +264,9 @@ class Employee{
     }
 }
 
-//test9:å°†å¯¹è±¡ä½œä¸ºå‚æ•°ä¼ é€’ç»™æ–¹æ³•
+//test9:½«¶ÔÏó×÷Îª²ÎÊı´«µİ¸ø·½·¨
 /*
-1.Circleç±»
+1.CircleÀà
  */
 class Hw06Test9{
     public static void main(String[] args){
@@ -296,80 +296,80 @@ class PassObject{
         System.out.print("Radius\tArea");
         System.out.println();
         for(double i = 1;i <= times;i++){
-            c.change(i);//è°ƒç”¨æ–¹æ³•ä¿®æ”¹å±æ€§
-            //c.radius = i ç›´æ¥ä¿®æ”¹å±æ€§
+            c.change(i);//µ÷ÓÃ·½·¨ĞŞ¸ÄÊôĞÔ
+            //c.radius = i Ö±½ÓĞŞ¸ÄÊôĞÔ
             c.findArea();
             System.out.println(i + "\t" + c.findArea());
         }
     }
 }
 
-//test10ï¼šç©å®¶å’Œç”µè„‘çŒœæ‹³ï¼Œé™åˆ¶æ¯”èµ›å±€æ•°ï¼Œæ˜¾ç¤ºè¾“èµ¢æ¸…å•ä¸æœ€ç»ˆè·èƒœç»“æœ
+//test10£ºÍæ¼ÒºÍµçÄÔ²ÂÈ­£¬ÏŞÖÆ±ÈÈü¾ÖÊı£¬ÏÔÊ¾ÊäÓ®Çåµ¥Óë×îÖÕ»ñÊ¤½á¹û
 /*
-ç¼–å†™ç±»ï¼š
-1.å®šä¹‰å‚æ•°ï¼šç©å®¶å‡ºæ‹³æƒ…å†µã€ç”µè„‘å‡ºæ‹³æƒ…å†µã€æ¯”èµ›å±€æ•°(1)ã€è·èƒœæ¬¡æ•°(0)
-2.æˆå‘˜æ–¹æ³•ï¼šç©å®¶é”®å…¥å‡ºæ‹³æƒ…å†µï¼›ç”µè„‘éšæœºäº§ç”Ÿå‡ºæ‹³æƒ…å†µï¼›æ¯”èµ›ç»“æœåˆ¤æ–­ï¼›æ¯”èµ›å±€æ•°è‡ªå¢ï¼›è·èƒœæ¬¡æ•°è¿‡æ»¤+è‡ªå¢
-ä¸»æ–¹æ³•ï¼šåˆ›å»ºç±»å¯¹è±¡
-1.å®šä¹‰å‚æ•°ï¼šæ¯”èµ›å±€æ•°ã€æœ€ç»ˆç»“æœ(è·èƒœæ¬¡æ•°)
-          è¾“èµ¢æ¸…å•(äºŒç»´æ•°ç»„è®°å½•æ¯”èµ›å±€æ•°ã€ç©å®¶ä¸ç”µè„‘å‡ºæ‹³æƒ…å†µ)
-          æ¯”èµ›ç»“æœ(ä¸€ç»´æ•°ç»„è®°å½•æ¯”èµ›ç»“æœ)
-2.å¾ªç¯æ¯”èµ›æ›´æ–°å‚æ•°
-3.è¾“å‡ºç»“æœ
-äºŒç»´æ•°ç»„è®°å½•å±€æ•°ä¸å‡ºæ‹³æƒ…å†µï¼›ä¸€ç»´æ•°ç»„è®°å½•æ¯è½®æ¯”èµ›ç»“æœï¼›è¾“å‡ºæœ€ç»ˆç»“æœ
+±àĞ´Àà£º
+1.¶¨Òå²ÎÊı£ºÍæ¼Ò³öÈ­Çé¿ö¡¢µçÄÔ³öÈ­Çé¿ö¡¢±ÈÈü¾ÖÊı(1)¡¢»ñÊ¤´ÎÊı(0)
+2.³ÉÔ±·½·¨£ºÍæ¼Ò¼üÈë³öÈ­Çé¿ö£»µçÄÔËæ»ú²úÉú³öÈ­Çé¿ö£»±ÈÈü½á¹ûÅĞ¶Ï£»±ÈÈü¾ÖÊı×ÔÔö£»»ñÊ¤´ÎÊı¹ıÂË+×ÔÔö
+Ö÷·½·¨£º´´½¨Àà¶ÔÏó
+1.¶¨Òå²ÎÊı£º±ÈÈü¾ÖÊı¡¢×îÖÕ½á¹û(»ñÊ¤´ÎÊı)
+          ÊäÓ®Çåµ¥(¶şÎ¬Êı×é¼ÇÂ¼±ÈÈü¾ÖÊı¡¢Íæ¼ÒÓëµçÄÔ³öÈ­Çé¿ö)
+          ±ÈÈü½á¹û(Ò»Î¬Êı×é¼ÇÂ¼±ÈÈü½á¹û)
+2.Ñ­»·±ÈÈü¸üĞÂ²ÎÊı
+3.Êä³ö½á¹û
+¶şÎ¬Êı×é¼ÇÂ¼¾ÖÊıÓë³öÈ­Çé¿ö£»Ò»Î¬Êı×é¼ÇÂ¼Ã¿ÂÖ±ÈÈü½á¹û£»Êä³ö×îÖÕ½á¹û
  */
 class Hw06Test10{
     public static void main(String[] args){
-    //åˆ›å»ºå¯¹è±¡
+    //´´½¨¶ÔÏó
         Tom t = new Tom();
-    //å®šä¹‰æ¯”èµ›æ¬¡æ•°
+    //¶¨Òå±ÈÈü´ÎÊı
         int gameCount = 2;
-    //è®°å½•æœ€ç»ˆæ¯”èµ›ç»“æœ
+    //¼ÇÂ¼×îÖÕ±ÈÈü½á¹û
         int winCount = 0;
-    //äºŒç»´æ•°ç»„æ¥æ”¶ç©å®¶å’Œç”µè„‘çš„å‡ºæ‹³æƒ…å†µï¼›
+    //¶şÎ¬Êı×é½ÓÊÕÍæ¼ÒºÍµçÄÔµÄ³öÈ­Çé¿ö£»
         int[][] arrOut = new int [gameCount][3];
         int j = 0;
-    //ä¸€ç»´æ•°ç»„æ¥æ”¶è¾“èµ¢æƒ…å†µï¼›
+    //Ò»Î¬Êı×é½ÓÊÕÊäÓ®Çé¿ö£»
         String[] arrRes = new String [gameCount];
-    //å¾ªç¯çŒœæ‹³æ¯”èµ›
+    //Ñ­»·²ÂÈ­±ÈÈü
         for(int i = 0;i < gameCount;i ++){
-            //è·å–å±€æ•°ä¸ç©å®¶å’Œç”µè„‘çš„å‡ºæ‹³æƒ…å†µå¹¶å†™å…¥äºŒç»´æ•°ç»„
+            //»ñÈ¡¾ÖÊıÓëÍæ¼ÒºÍµçÄÔµÄ³öÈ­Çé¿ö²¢Ğ´Èë¶şÎ¬Êı×é
             arrOut[i][j+1]=t.tom();
             arrOut[i][j+2]=t.computer();
             arrOut[i][j] = t.gameNum();
-            //è·å–ä¸‰è½®æ¯”èµ›ç»“æœå¹¶å†™å…¥ä¸€ç»´æ•°ç»„
+            //»ñÈ¡ÈıÂÖ±ÈÈü½á¹û²¢Ğ´ÈëÒ»Î¬Êı×é
             arrRes[i]=t.res();
-            //è¾“å‡ºæ¯ä¸€å±€èµ¢çš„æƒ…å†µ
+            //Êä³öÃ¿Ò»¾ÖÓ®µÄÇé¿ö
             System.out.println("===========================");
-            System.out.println("å±€æ•°\tç©å®¶å‡ºæ‹³\tç”µè„‘å‡ºæ‹³\tè¾“èµ¢æƒ…å†µ");
+            System.out.println("¾ÖÊı\tÍæ¼Ò³öÈ­\tµçÄÔ³öÈ­\tÊäÓ®Çé¿ö");
             System.out.println(t.gameNum+"\t"+t.tom+"\t\t"+t.computer+"\t\t"+t.res());
             System.out.println("===========================");
 
         }
-        //è¾“å‡ºæœ€ç»ˆç»“æœ
-        System.out.println("å±€æ•°\tç©å®¶å‡ºæ‹³\tç”µè„‘å‡ºæ‹³\tè¾“èµ¢æƒ…å†µ");
-        //æ‰“å°äºŒç»´æ•°ç»„ï¼šæ˜¾ç¤ºå±€æ•°ä¸å‡ºæ‹³æƒ…å†µ
+        //Êä³ö×îÖÕ½á¹û
+        System.out.println("¾ÖÊı\tÍæ¼Ò³öÈ­\tµçÄÔ³öÈ­\tÊäÓ®Çé¿ö");
+        //´òÓ¡¶şÎ¬Êı×é£ºÏÔÊ¾¾ÖÊıÓë³öÈ­Çé¿ö
         for(int m = 0;m < arrOut.length;m++){
             for(int n = 0;n < arrOut[m].length;n++){
                 System.out.print(arrOut[m][n]+"\t\t");
             }
-            //æ‰“å°ä¸€ç»´æ•°ç»„ï¼šæ˜¾ç¤ºæ¯”èµ›ç»“æœ
+            //´òÓ¡Ò»Î¬Êı×é£ºÏÔÊ¾±ÈÈü½á¹û
             System.out.print(arrRes[m]);
             System.out.println();
         }
         for(int x = 0;x < arrRes.length;x++) {
             winCount = t.winNum(arrRes[x]);
         }
-        System.out.println("æ‚¨å…±è·èƒœ"+winCount+"æ¬¡");
+        System.out.println("Äú¹²»ñÊ¤"+winCount+"´Î");
     }
 }
 class Tom{
-    //ç©å®¶å‡ºæ‹³ç±»å‹
+    //Íæ¼Ò³öÈ­ÀàĞÍ
     int tom;
-    //ç”µè„‘å‡ºæ‹³ç±»å‹
+    //µçÄÔ³öÈ­ÀàĞÍ
     int computer;
-    //æ¯”èµ›æ¬¡æ•°
+    //±ÈÈü´ÎÊı
     int gameNum=0;
-    //ç©å®¶è·èƒœæ¬¡æ•°
+    //Íæ¼Ò»ñÊ¤´ÎÊı
     int winNum=0;
     public int computer(){
         Random r = new Random();
@@ -377,11 +377,11 @@ class Tom{
         return computer;
     }
     public int tom(){
-        System.out.println("è¯·å‡ºæ‹³(0-æ‹³å¤´,1-å‰ªåˆ€,2-å¸ƒ)ï¼š");
+        System.out.println("Çë³öÈ­(0-È­Í·,1-¼ôµ¶,2-²¼)£º");
         Scanner myScanner = new Scanner(System.in);
         tom = myScanner.nextInt();
         if(tom > 2 || tom <0){
-            System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯");
+            System.out.println("ÄúµÄÊäÈëÓĞÎó");
         }
         return tom;
     }

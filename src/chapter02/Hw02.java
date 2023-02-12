@@ -12,7 +12,7 @@ public class Hw02{
     }
 }
 
-//work02:charçš„æœ¬è´¨æ˜¯ä¸€ä¸ªæ•´æ•°ï¼Œå¯ä»¥è¿›è¡Œè®¡ç®—æœ€ç»ˆè½¬æ¢æˆunicodeç¼–ç è¾“å‡ºï¼›
+//work02:charµÄ±¾ÖÊÊÇÒ»¸öÕûÊı£¬¿ÉÒÔ½øĞĞ¼ÆËã×îÖÕ×ª»»³Éunicode±àÂëÊä³ö£»
 class Hw02t2{
     public static void main(String[] args){
         char a = '\n';
@@ -32,25 +32,25 @@ class Hw02t3{
         char b2 = 'b';
         double c1 = 10.0;
         double c2 = 20.0;
-        System.out.println(a1 + a2); //å­—ç¬¦ä¸²ç›¸åŠ 
+        System.out.println(a1 + a2); //×Ö·û´®Ïà¼Ó
         System.out.println(b1 + b2); //char+char=int
-        System.out.println(c1 + c2); //doubleçš„è¿ç®—å¿…é¡»å‡ä¸ºdoubleæ‰èƒ½è¾“å‡ºç²¾ç¡®å°æ•°ï¼›
+        System.out.println(c1 + c2); //doubleµÄÔËËã±ØĞë¾ùÎªdouble²ÅÄÜÊä³ö¾«È·Ğ¡Êı£»
     }
 }
 
-/*work04ï¼š
-  å§“å å¹´é¾„ æˆç»©  æ€§åˆ« ç±è´¯
+/*work04£º
+  ĞÕÃû ÄêÁä ³É¼¨  ĞÔ±ğ ¼®¹á
   xx   xx  xx   xx   xx
 */
 class Hw02t4{
     public static void main(String[] args){
-        String a = "å¢è¯—å®";
+        String a = "Â¬Ê«Äş";
         byte b = 22;
         byte c = 100;
-        char d = 'å¥³';
-        String e = "æµ™æ±Ÿ";
+        char d = 'Å®';
+        String e = "Õã½­";
         char x = '\t';
-        System.out.println("å§“å\tå¹´é¾„\t?æˆç»©\tæ€§åˆ«\tç±è´¯\n"+
+        System.out.println("ĞÕÃû\tÄêÁä\t?³É¼¨\tĞÔ±ğ\t¼®¹á\n"+
         a + x + b + x + c + x + d + x + e);
     }
 }
