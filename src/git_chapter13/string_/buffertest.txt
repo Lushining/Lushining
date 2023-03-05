@@ -1,0 +1,7 @@
+1.String s = null;
+  StringBuffer sb = new StringBuffer();
+  sb.append(str);//char[] value = {'n','u','l','l'}
+  sb.length()    //4
+  sb             //"null"
+  StringBuffer sb1 = new StringBuffer(str);//空指针异常
+  sb1

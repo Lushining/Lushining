@@ -1,0 +1,28 @@
+class Animal{
+    String name;
+    public Animals(String name){
+        this.name=name;
+    }
+}
+String s1 = "lsn";
+Animal a = new Animal(s1);
+Animal b = new Animal(s1);
+a==b    a.equals(b) a.name==b.name
+1.栈s1->常量池"lsn"
+  栈a->堆地址a->常量池"lsn"
+  栈b->堆地址b->常量池"lsn"
+=》false false true  //Animal未重写equals，此方法仍用于比较对象地址
+
+String s4 =new String("lsn");
+String s5 = "lsn";
+s1==s4  s4==s5
+2.s4->堆value->常量池"lsn"
+  s5->常量池
+=》false false
+
+String t1 = "hello"+s1;
+String t2 = "hellolsn";
+t1.intern()==t2;
+3.栈t1->堆value->常量池"hellolsn"--一个堆对象三个常量池对象
+  栈t2->常量池
+=》true--intern指向常量池对象

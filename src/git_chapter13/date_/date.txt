@@ -1,0 +1,41 @@
+Date：代表特定瞬间(精确到毫秒)
+1.获取时间
+  new Date()：当前时间
+  new Date(1234567)：指定毫秒数得到时间
+  d.getTime()：获取对应的毫秒数
+2.格式化时间：jdk1.8-SimpleDateFormat-指定时间字段
+①new SimpleDateFormat("yyyy-MM-dd hh:mm:ss E")：指定时间格式
+  Date date = new Date();
+  String s = sdf.format(date)：转换时间为指定格式的字符串
+②new SimpleDateFormat("yyyy-MM-dd hh:mm:ss E")：指定时间格式
+  String s = "yyyy年MM月dd日 hh:mm:ss E"
+  Date date = sdf.parse(s);
+
+Calendar(抽象类)：转换特定瞬间与特定日历字段
+1.获取日历(返回字段)
+  Calendar.getInstance()：构造器(private)
+2.获取日历字段
+  年月日：c.get(Calendar.YEAR/MONTH+1/DAT_OF_MONTH)
+  *MONTH默认0始：MONTH+1
+  时分秒：c.get(Calendar.HOUR/MINUTE/SECOND)
+  *HOUR默认12进制：->HOUR_OF_DATE变24进制
+3.通过方法自定义格式格式化
+  sout(c.get()+""+...)
+三、LocalDate/Time/DateTime：线性安全
+1.获取日期时间
+  LocalDate/Time/DateTime().now()
+2.获取日期字段
+  年月日：l.getYear/Month<Value>/DateOfYear()
+  时分秒：l.getHour/Minute/Second()
+3.格式化
+  LocalDateTime.now()
+  DateTimeFormatter.ofPattern(pattern);
+  dtf.format(l)
+4.时间戳：
+  ①获得时间戳：Instant.now();
+  ②与Date类转换：
+    a.Date date = Date.from(instant)
+    b.Instant instant = data.toInstant();
+5.加减日期时间：
+①l.plusDays(num)
+②l.minusMinutes(num)

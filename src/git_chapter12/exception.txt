@@ -1,0 +1,42 @@
+一、异常体系
+1.异常体系：Serializable(I)/Object(C)-Throwable(C)-
+  ①Error：JVM无法解决的严重问题，
+  ②Exception：编译异常必须处理(2way)/运行异常默认throws
+2.五大运行异常
+  ①NullPointerE~空指针异常：在需要对象的地方使用null
+  ②ArithmeticE~算数异常
+  ③ArrayIndexOutOfBoundE~数组下标越界异常
+  ④ClassCastE~类型转换异常：错误的向下转型
+    ep：A-B-C;上转A a=new B();下转B b=(B)a;异常C c=(C)a
+  ⑤NumberFormatE~数据格式不正确：字符串转换异常
+    ep：String name = “你好”，int num = Integer.parseInt(name);
+#常见的编译异常(pass)
+  SQLE~：操作数据库
+  IQE~：操作文件
+  FileNotFoundE~：操作的文件不存在
+  EOFE~：操作文件到末尾时发生异常
+  IllegalArgumentE~：参数异常
+二、异常处理机制
+1.try-catch-finally(处理异常)   //快捷：(ctrl+alt+t)
+  try{①}catch(Exception e){②}finally{③}
+  ①可能的异常：发生异常时，进入catch，不继续执行try代码，程序继续；
+              未发生异常，跳过catch，顺序执行try代码块，程序继续；
+  ②多catch：子类(五大异常)在前，父类(E)在后，只匹配一个catch
+  ③必须执行：通常用于释放资源、关闭连接
+  ④c-f：顺序执行再返回：c&f返回冲突(均return)则优先f
+  ⑤t-f：==抛出异常：顺序执行t&f->返回异常(未处理)->退出程序
+2.throws(抛出异常)
+  JVM-main-f1-f2() throws <子类/父类/列表>{}
+  ①返回方法的调用者处理,JVM最终抛出异常：输出异常信息+退出程序
+  ②可以抛出子类(XxxE)/父类(E)异常或异常列表(XxxE,YyyE)
+  ③重写方法：子类与父类异常一致或为父类异常的子类
+  ④择一处理：t-c/throws    //编译异常必须处理vs运行默认throws
+3.if-throw(过滤异常，退出方法)
+  if(过滤条件){throw new XxxE("提示信息")}
+三、自定义异常
+1.步骤
+  ①自定义类：继承E/RuntimeE(编译/运行异常)
+  ②生成构造器：可选择输出异常提示信息
+2.throw&throws
+  ①throws：异常处理的方式，位于方法声明处，紧跟异常类型
+  ②throw：生成异常对象的关键字，位于方法体，紧跟异常对象

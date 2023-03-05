@@ -1,0 +1,63 @@
+tips:
+1.直接赋值：->(创建)常量池对象
+2.构造器赋值：堆对象->(创建)常量池对象
+3.加法赋值：
+  a.常量：运算顺序(算数->赋值)：创建一个常量池对象
+  b.变量：创建常量池对象->构造String对象：创建一个堆对象与三个常量池对象
+*intern():返回字符串的常量池地址
+4.final属性：可以改变字符串内容，不能更换引用对象
+test
+1.直接赋值vs构造器赋值
+  String a = "abc";//创建并指向常量池对象
+  String b = "abc";//直接指向常量池对象
+  a.equals(b);     //值相等：true
+  a == b;          //同一个对象->地址相等：true
+  String c = new String("abc");     //创建并指向堆value属性
+  a.equals(c);     //值相同：true
+  a==c;            //对象不同：false
+  a==c.intern();   //同一个对象"abc"：true
+  c==c.intern();   //堆地址vs常量池地址：false
+2.构造器赋值
+  Person p1 = new Person();
+  p1.name = "abc";
+  Person p2 = new Person();
+  p2.name = "abc";
+  p1.name.equals(p2.name);  //字符串内容：true
+  p1.name == p2.name;       //常量池地址：true
+  p1.name == "abc";         //常量池地址：true
+  String s1 = new String("abc");
+  String s2 = new String("abc");
+  s1 == s2;                 //不同堆地址：false
+3.加法赋值
+①字符串常量相加
+  String a = "a"+"b";       //运算顺序：一个常量池对象
+②字符串变量相加
+  String a = "a";       //常量池"a"
+  String b = "b";       //常量池"b"
+  String c = a + b;     //堆value->常量池"ab"
+  String d = "ab"       //常量池"ab"
+  c == d;               //堆对象vs常量池对象：false
+  String e = "a"+"b";   //直接指向常量池"ab"
+  e == d;               //同一个常量池对象：true
+  String f = (a+b).intern();//常量池对象"ab"
+  d == f;               //同常量池对象：true
+  d.equals(f)           //内容相等：true
+4.final属性
+  String s1 = "hi";
+  s1 = "haha"       //一个堆对象,两个常量池对象
+5.内存分析图
+  public class Test1{
+  String str = new String("hi");        //str->堆value->常量池"hi"
+  final char[] ch = {'j','a','v','a'};  //ch->堆{'j','a','v',a'}
+  public void change(String str,char ch[]){
+  //方法栈change：str->value->"hi" ; ch->堆{'j','a','v',a'}
+  str = 'java';     //str->常量池"java"
+  ch[0] = 'h';      //ch->堆{'h','a','v',a'}
+  }
+  main(){                   //方法栈main
+  Test1 ex = new Test();    //堆对象ex(str,ch)
+  ex.change(ex.str,ex.ch);  //str->value->"java",ch->{'h','a','v','a'}
+  sout(ex.str+"and");       //“hiand“
+  sout(ex.ch)               //”hava“
+  }
+  }

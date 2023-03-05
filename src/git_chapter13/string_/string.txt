@@ -1,0 +1,58 @@
+二、String类：
+1.String结构：
+  ①体系：{Serializable(I),Comparable(I),CharSequence(I),Object(C)}
+  ②final类：保存字符串常量，通过更改地址更新内容
+  ③final char[] value属性：堆数组指向常量池空间
+    *数组->引用对象：可以修改单个字符，但不能更换引用对象
+  ④构造器重载：()/(String original)/(char[] a)/(cha[] a,int startIndex,int count)
+  ⑤Unicode编码：一个字符==两个字节(不区分汉字与字母)
+2.String创建对象：intern()返回常量池对象
+  ①直接赋值：String s = "";
+    s->方法区常量池的""对象
+  ②构造器赋值：String s = new String("")
+    s->堆对象(value)->常量池的""对象
+  ③加法赋值：
+    a.常量：运算顺序(算数->赋值)：创建一个常量池对象
+    b.变量：创建常量池对象->构造String对象：创建一个堆对象与三个常量池对象
+3.常用方法(熟能生巧)：
+  ①比较：equals(IgnoreCase)相等 ; compareTo大小(字符->长度减法) ;
+  ②截取：substring(m/m,n)截取索引[m,末尾)/(m,n-1)
+  ③操作：增/割/改/查/转换
+    contact/spilt("")返回数组/replace(a,b)a->b
+    (last)indexOf(''/"")获取首/末次出现的索引位；0始,无则返回-1；
+    toUpper/LowerCase大小写 ; toCharArray字符数组
+  *分割特殊字符->转义字符："//"->"////"
+  ④format格式化,变量替换占位符：%s字符串,%c字符,%d整型,%.2f浮点型(四舍五入保留两位)
+  *s.format("姓名是%s性别是%c年龄是%d成绩是%",name,gender,age,score)
+二、StringBuffer
+1.结构：
+  ①体系：Serializable,CharSequence,AbstractStringBuilder(C)-{Appendable(I),CharSequence(I),Object}
+  ②final类，保存字符串变量，通过更改变量更新内容
+  ③char[] value属性：堆数组指向堆空间
+  ④构造器：a.StringBuffer()：构造容量为16个字符的char[] value；
+            b.StringBuffer(int capacity)：构造指定容量的value；
+            c.StringBuffer(String str)：构造(str.length+16)的value,并初始化
+2.转换：
+  ①String->Buffer：<构造器>sb = new StringBuffer(s);
+                   <append方法>sb = new StringBuffer();sb.append(str);
+  ②Buffer->String：s = sb.toString();
+3.方法：增删改查插
+  ①append：不论输入的数据类型，输出str
+  *append(null);    //"null"
+  ②delete(start,end)：删除索引[start,end)的字符
+  ③replace(start,end,str)：[start,end)->str
+  ④indexOf：返回str第一次出现的索引,0始无则-1
+  ⑤insert(index,str)：在index前插入
+  ⑥length
+三、StringBuilder：结构与方法同Buffer
+  *没有synchronized关键字(互斥处理)，仅适合单线程情况
+
+
+tips:
+1.运算符顺序：
+  括号->单目(++ -- ! ~)->算数->位
+  关系(== != instanceOf)->逻辑(& ^ |)->三元->赋值
+2.intern()：返回常量池对象
+3.String&Buffer&Builder选取原则：
+  存在大量修改操作？单线程？被多个对象引用？
+4.String的数字判断：toCharArray->unicode编码

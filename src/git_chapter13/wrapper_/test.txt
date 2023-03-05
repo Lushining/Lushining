@@ -1,0 +1,32 @@
+1.自动装箱
+  Double d = 100d;  //ok
+  Float f = 1.5f;   //ok
+2.三元运算符==混合运算
+  Object object = true ? new Integer(1) : new Double(2.0);
+  System.out.println(obj1);     //1.0
+3.装箱+向上转型
+  Object object2;
+  if(true){obj2 = new Integer(1);}  //int->Integer->Object
+  else{obj2 = new Double(2.0);}
+  System.out.println(obj2);         //1
+4.比较运算符==：有基本数据类型则比较值值，否则比较对象的地址
+①Integer i = new Integer(1/128);
+  Integer j = new Integer(1/128);
+  i == j  //new->不同的对象：false
+②Integer i = 127;
+     int j = 127;
+     i == j ;
+     Integer i = 128;
+     int j = 128;
+     i == j;
+5..valueOf():(-128,127)->return/else->new
+①Integer m = 1;    //自动使用valueOf()装箱
+  Integer n = 1;
+  m == n            //true
+  Integer x = 128;
+  Integer y = 128;
+  x == y            //false
+②Integer i = 127;
+  Integer j = new Integer(127);
+  i == j;          //数组选取&new对象：false
+

@@ -1,0 +1,45 @@
+泛型
+1.作用：定义时声明泛型<T>，运用时(类/接口/方法)指定泛型
+       ->以约束类中(属性/参数/方法返回值类型)的数据类型
+2.使用细节：
+  ①编译：默认<Object>；可以有多个但必须为引用类型
+  ②运行：默认或指定为编译类型；不允许继承
+  ③自定义泛型类/接口：
+    a.定义：class/interface Name<T,..>{类成员}
+    b.指定：创建对象时确定 ; 继承/连接接口时确定
+    c.使用：只有普通成员可以使用泛型，定义泛型数组不能初始化
+  ④自定义泛型方法：
+    a.定义：普通类/泛型类，修饰符 <..> 返回类型 方法名(){}
+    b.指定：调用泛型方法时通过传参自动确定泛型类型(装箱)
+    c.应用：参数使用泛型方法/泛型类的类型
+  ⑤通配符：
+    a.<?>：支持任意泛型类型
+    b.<? extend A>：限定泛型类型的上限
+    c.<? super A>：限定泛型类型的下限
+
+tips:
+1.加强for循环：
+  for(局部变量:表达式)
+  局部变量：类型与数组元素一致
+  表达式：数组名/返回值为数组的方法
+2.ArrayList<Object o>：对象的集合(Object[])
+  ①定义：AL<> ar = new ArrayList<>();
+  ②添加：al.add(new A());
+  ③for循环输出：for(A a : ar)
+3.HashSet<Object o>:使用成员对象计算hashcode
+  ①作用：储存对象，不允许有重复对象；
+  ②定义：HashSet<T> hs = new HashSet<T>();
+    添加：add(new A())：
+  ③for循环输出：增强for()
+4.HashMap<Object key,Object value>:使用键对象计算hashcode
+  ①作用：储存键值对，不允许重复的键，但允许键和值为null。
+  ②定义：HashMap<K,V> hm = new HashMap<K,V>();
+    添加：put(K,new A())
+  ③键值对应：Set<Map.Entry<K,V> entries = hm.entrySet();
+            Iterator<Map.Entry<String,generic_.Student>> iterator = entries.iterator();
+  ④while循环输出：
+    while(iterator.hasNext()){
+        Map.Entry<K,V> next = iterator.next();
+        sout(next.getKey/Value)}
+=>储存对象的集合==Object[]
+

@@ -1,0 +1,34 @@
+chapter13--包装类
+一、包装类：
+1.分类：针对八大基本数据类型的引用类型
+2.体系：
+  ①布尔&字符(C)->{Comparable(I),Serializable(I),Object(C)}
+  ②整型&浮点(C)->{Comparable(I),Number(C)-{Serializable(I),Object(C)}}
+3.装箱&拆箱：
+  ①装箱：= <int>/new Integer(<int>);    //int->Integer对象
+    *底层自动使用<Integer>.valueOf(<int>)，(-128,127)不新建对象
+  ②拆箱：= <Integer>;  //Integer对象->int
+    *底层自动使用<Integer>.intValue()
+4.类型转换
+  ①包装类->：= i.toString()/i+""/String.valueOf(i);
+  ②String->：= Integer.parseInt(str)/new Integer(str)
+5.常用方法(pass)：
+  ①Integer.MIN/MAX_VALUE
+  ②Character.isDigit/Letter/UpperCase/LowerCase/Whitespace('')
+  ③Character.toUpper/LowerCase('')
+
+tips：
+1.基本数据类型：
+  ①自动转换：精度小->大(2way)；强制转换：String<->基本/char
+  ②整型默认int，+d/l；浮点型默认double，+f
+2.运算符
+  ①三元运算符：混合运算转换成精度最大的运算并返回
+  ②比较运算符：有基本数据类型则比较值，两个对象则比较地址
+    equals()：Object比较对象，重写比较内容
+3.接口
+  ①Serializable：串行化接口--对象可以保存到文件或在网络传输
+  ②Comparable：比较接口--对象可以相互比较(大小)
+  ③CharSequence：字符序列
+4.diagram
+  字段->属性
+  属性->set/getXxx

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/chapter02/Hw02.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter03/Hw03.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter04/Branch.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter06/Hw06.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter06/This.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/chapter07/Encap.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/Extend.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/ExtendTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/Idea.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/Override.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/chapter07/Package.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work01.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work02.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work03.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work04.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work05.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work07.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work08.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/chapter07/object/Equals.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work07.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter07/homework/Work08.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/chapter07/object/Equals.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/chapter07/object/ToString.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/poly/array/Person.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/poly/array/PolyArray.java" charset="UTF-8" />
@@ -24,5 +30,6 @@
     <file url="file://$PROJECT_DIR$/src/chapter07/smallchangesystem/Oop.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/smallchangesystem/Produce.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/chapter07/smallchangesystem/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/houserentsystem/Menu.java" charset="GBK" />
   </component>
 </project>

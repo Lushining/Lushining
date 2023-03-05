@@ -1,0 +1,17 @@
+三个常用注解
+1.@Override：检验子类是否重写父类方法
+2.@Deprecated：表示某个元素(类、方法等)已过时，但仍可以使用
+3.@SuppressWarnings({"all"})：抑制编译器警告(作用域)
+
+四种元注解：修饰注解的注解
+1.@Target(ElementType.)：限定可以注解的类型
+2.Retention(RetentionPolicy.)：指定注解的作用时间
+  *SOURCE：记录注解于源文件，编译后失效
+  *CLASS：记录注解于class文件，jvm运行时失效
+  *RUNTIME：记录注解于class文件，jvm运行时生效
+3.Documented：指定注解是否会在javadoc体现
+4.Inherited：子类继承父类注解
+
+tips:
+1.@interface：表示注解类
+2.警告类型：unchecked、rawtypes(指定泛型)、unused
